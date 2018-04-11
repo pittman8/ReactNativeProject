@@ -27,20 +27,6 @@ describe('Jest Create React Tests', function() {
 
 });
 
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            file: 'unknown',
-            foo: 'waiting'
-        };
-    };
-
-    getFile = () => {
-        console.log('getFile called.');
-        this.setState({file: 'url-file.js'})
-    };
-}
 
 
 
