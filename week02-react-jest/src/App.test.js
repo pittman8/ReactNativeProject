@@ -34,7 +34,7 @@ class App extends Component {
             file: 'unknown',
             foo: 'waiting'
         };
-    }
+    };
 
     getFile = () => {
         console.log('getFile called.');
