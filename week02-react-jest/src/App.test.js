@@ -39,4 +39,36 @@ describe('Jest Create React Tests', function() {
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
+    it('renders state of firstName after button click', () => {
+        const wrapper = shallow(<App />);
+        const firstName = <p className="App-intro">firstName: Patty</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(firstName)).toEqual(true);
+    });
+
+    it('renders and displays the default last name', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">lastName: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders state of lastName after button click', () => {
+        const wrapper = shallow(<App />);
+        const lastName = <p className="App-intro">lastName: Murray</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(lastName)).toEqual(true);
+    });
+
+    it('renders and displays the default street', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">street: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders state of street after button click', () => {
+        const wrapper = shallow(<App />);
+        const street = <p className="App-intro">street: 154 Russell Senate Office Building</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(street)).toEqual(true);
+    });
 });
