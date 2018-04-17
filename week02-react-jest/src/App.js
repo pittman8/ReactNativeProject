@@ -9,7 +9,11 @@ class App extends Component {
             nine: '0',
             firstName: 'unknown',
             lastName: 'unknown',
-            street: 'unknown'
+            street: 'unknown',
+            boxNumber: 'unknown',
+            city: 'unknown',
+            state: 'unknown',
+            zipCode: 'unknown'
         };
 
     }
@@ -33,6 +37,18 @@ class App extends Component {
               <p className="App-intro">
                   street: {this.state.street}
               </p>
+              <p className="App-intro">
+                  boxNumber: {this.state.boxNumber}
+              </p>
+              <p className="App-intro">
+                  city: {this.state.city}
+              </p>
+              <p className="App-intro">
+                  state: {this.state.state}
+              </p>
+              <p className="App-intro">
+                  zipCode: {this.state.zipCode}
+              </p>
 
               <button className="elf" onClick={this.getNine}>Get Nine</button>
               <button className="setAddress" onClick={this.setAddress}>Set Address</button>
@@ -51,7 +67,11 @@ class App extends Component {
         this.setState({
             firstName: 'Patty',
             lastName: 'Murray',
-            street: '154 Russell Senate Office Building'
+            street: '915 Second Avenue',
+            boxNumber: '2988',
+            city: 'Seattle',
+            state: 'Washington',
+            zipCode: '98174'
         })
     };
 }

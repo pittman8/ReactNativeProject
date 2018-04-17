@@ -67,8 +67,60 @@ describe('Jest Create React Tests', function() {
 
     it('renders state of street after button click', () => {
         const wrapper = shallow(<App />);
-        const street = <p className="App-intro">street: 154 Russell Senate Office Building</p>;
+        const street = <p className="App-intro">street: 915 Second Avenue</p>;
         wrapper.find('button.setAddress').simulate('click');
         expect(wrapper.contains(street)).toEqual(true);
+    });
+
+    it('renders and displays the default boxNumber', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">boxNumber: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders state of boxNumber after button click', () => {
+        const wrapper = shallow(<App />);
+        const boxNumber = <p className="App-intro">boxNumber: 2988</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(boxNumber)).toEqual(true);
+    });
+
+    it('renders and displays the default city', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">city: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders state of city after button click', () => {
+        const wrapper = shallow(<App />);
+        const city = <p className="App-intro">city: Seattle</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(city)).toEqual(true);
+    });
+
+    it('renders and displays the default state', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">state: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders state of state after button click', () => {
+        const wrapper = shallow(<App />);
+        const state = <p className="App-intro">state: Washington</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(state)).toEqual(true);
+    });
+
+    it('renders and displays the default zipCode', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">zipCode: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders state of zipCode after button click', () => {
+        const wrapper = shallow(<App />);
+        const zipCode = <p className="App-intro">zipCode: 98174</p>;
+        wrapper.find('button.setAddress').simulate('click');
+        expect(wrapper.contains(zipCode)).toEqual(true);
     });
 });
