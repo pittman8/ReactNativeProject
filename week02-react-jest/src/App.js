@@ -6,8 +6,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            file: 'unknown',
-            foo: 'waiting'
+            nine: '0'
         };
     }
 
@@ -18,8 +17,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-          <p className="App-intro">File: {this.state.file}</p>
-          <button id='getFile' onClick={this.getFile}>Get File</button>
+          <p className="App-intro">
+              Nine: {this.state.nine}
+          </p>
+
+          <button id="getNine" onClick={this.bar}>Get Nine</button>
       </div>
 
     );
@@ -27,6 +29,12 @@ class App extends Component {
     getFile = () => {
         console.log('getFile called.');
         this.setState({file: 'url-file.js'})
+    };
+
+    bar = () => {
+        this.setState({
+            nine: '9'
+        })
     };
 }
 
