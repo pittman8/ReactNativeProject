@@ -27,8 +27,8 @@ describe('Jest Create React Tests', function() {
 
     it('renders state of File paragraph after button click', () => {
         const wrapper = shallow(<App />);
-        const nineSign = <p className="App-intro">file: url-file.js</p>;
-        wrapper.find('#getFile').simulate('click');
+        const nineSign = <p className="App-intro">Nine: 9</p>;
+        wrapper.find('button.elf').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
 
