@@ -6,8 +6,10 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            nine: '0'
+            nine: '0',
+            firstName: 'unknown'
         };
+
     }
 
   render() {
@@ -20,8 +22,12 @@ class App extends Component {
               <p className="App-intro">
                   Nine: {this.state.nine}
               </p>
+              <p className="App-intro">
+                  firstName: {this.state.firstName}
+              </p>
 
-              <button id="elf" onClick={this.getNine}>Get Nine</button>
+              <button className="elf" onClick={this.getNine}>Get Nine</button>
+              <button className="setAddress" onClick={this.setAddress}>Set Address</button>
           </div>
 
       );
@@ -30,6 +36,12 @@ class App extends Component {
     getNine = () => {
         this.setState({
             nine: '9'
+        })
+    };
+
+    setAddress = () => {
+        this.setState({
+            firstName: 'Patty'
         })
     };
 }

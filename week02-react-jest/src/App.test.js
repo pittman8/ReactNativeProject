@@ -10,11 +10,12 @@ describe('Jest Create React Tests', function() {
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<App />, div);
+        ReactDOM.unmountComponentAtNode(div);
     });
 
     it('renders and reads H1 text', () => {
-        const wrapper = shallow(<App />);
-        const welcome = <h2>Welcome to React</h2>;
+        const wrapper = shallow(<App/>);
+        const welcome = <h1 className="App-title">Welcome to React</h1>;
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
@@ -30,6 +31,12 @@ describe('Jest Create React Tests', function() {
         const nineSign = <p className="App-intro">Nine: 9</p>;
         wrapper.find('button.elf').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
+    });
+
+    it('renders and displays the default first name', () => {
+        const wrapper = shallow(<App />);
+        const welcome = <p className="App-intro">firstName: unknown</p>;
+        expect(wrapper.contains(welcome)).toEqual(true);
     });
 
 });
