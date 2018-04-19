@@ -43,21 +43,17 @@ address(professor);
 // ES6 Class
 class Calculator {
 
-    add(operanda, operandb) {
-        return operanda + operandb;
-    }
+    add = (operanda, operandb) =>
+        operanda + operandb;
 
-    subtract(operanda, operandb) {
-        return operanda - operandb;
-    }
+    subtract = (operanda, operandb) =>
+        operanda - operandb;
 
-    multiply(operanda, operandb) {
-        return operanda * operandb;
-    }
+    multiply = (operanda, operandb) =>
+        operanda * operandb;
 
-    divide(operanda, operandb) {
-        return operanda / operandb;
-    }
+    divide = (operanda, operandb) =>
+        operanda / operandb;
 }
 
 var calculator = new Calculator();

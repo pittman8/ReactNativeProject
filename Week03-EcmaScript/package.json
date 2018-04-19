@@ -1,0 +1,19 @@
+{
+  "name": "week03-ecmascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "work.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ES6"
+  ],
+  "author": "Hannah Pittman",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-1": "^6.24.1"
+  }
+}
