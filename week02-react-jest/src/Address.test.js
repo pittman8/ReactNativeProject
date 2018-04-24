@@ -138,8 +138,12 @@ describe('Address Tests', function() {
 
     it('renders state of website after button click', () => {
         const wrapper = shallow(<Address addressList={addresses} />);
+        console.log(wrapper.debug());
         const website = <p className="App-intro">website: https://www.murray.senate.gov</p>;
         wrapper.find('button.setAddress').simulate('click');
+        // childAt debug test
+        const indexedParagraph = wrapper.find('div').childAt(2).debug();
+        console.log(indexedParagraph);
         expect(wrapper.contains(website)).toEqual(true);
     });
 });
@@ -156,4 +160,3 @@ const getFirst = (wrapper) => {
 
 getFirst(shallow(<Address addressList={addresses} />));
 getLast(shallow(<Address addressList={addresses} />));
-// getChild() function calls all <p> elements, and fails

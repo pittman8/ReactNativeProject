@@ -30,5 +30,6 @@ describe('App Tests', function() {
         const nineSign = <p className="App-intro">Nine: 9</p>;
         wrapper.find('button.elf').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
+
     });
 });
