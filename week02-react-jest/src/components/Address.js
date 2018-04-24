@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 class Address extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        const address = this.props.addressList[0];
         this.state = {
-            firstName: 'unknown',
-            lastName: 'unknown',
-            street: 'unknown',
-            boxNumber: 'unknown',
-            city: 'unknown',
-            state: 'unknown',
-            zipCode: 'unknown'
+            firstName: address.firstName,
+            lastName: address.lastName,
+            address: address.address,
+            city: address.city,
+            state: address.state,
+            zip: address.zip,
+            phone: address.phone,
+            fax: address.fax,
+            tollfree: address.tollfree,
+            website: address.website
         };
 
     }
@@ -26,10 +30,7 @@ class Address extends Component {
                     lastName: {this.state.lastName}
                 </p>
                 <p className="App-intro">
-                    street: {this.state.street}
-                </p>
-                <p className="App-intro">
-                    boxNumber: {this.state.boxNumber}
+                    address: {this.state.address}
                 </p>
                 <p className="App-intro">
                     city: {this.state.city}
@@ -38,7 +39,19 @@ class Address extends Component {
                     state: {this.state.state}
                 </p>
                 <p className="App-intro">
-                    zipCode: {this.state.zipCode}
+                    zip: {this.state.zip}
+                </p>
+                <p className="App-intro">
+                    phone: {this.state.phone}
+                </p>
+                <p className="App-intro">
+                    fax: {this.state.fax}
+                </p>
+                <p className="App-intro">
+                    tollfree: {this.state.tollfree}
+                </p>
+                <p className="App-intro">
+                    website: {this.state.website}
                 </p>
                 <button className="setAddress" onClick={this.setAddress}>Set Address</button>
             </div>
@@ -47,14 +60,18 @@ class Address extends Component {
     }
 
     setAddress = () => {
+        const address = this.props.addressList[1];
         this.setState({
-            firstName: 'Patty',
-            lastName: 'Murray',
-            street: '915 Second Avenue',
-            boxNumber: '2988',
-            city: 'Seattle',
-            state: 'Washington',
-            zipCode: '98174'
+            firstName: address.firstName,
+            lastName: address.lastName,
+            address: address.address,
+            city: address.city,
+            state: address.state,
+            zip: address.zip,
+            phone: address.phone,
+            fax: address.fax,
+            tollfree: address.tollfree,
+            website: address.website
         })
     };
 }

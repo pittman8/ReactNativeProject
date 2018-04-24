@@ -16,13 +16,15 @@ class App extends Component {
           <div className="App">
               <header className="App-header">
                   <img src={logo} className="App-logo" alt="logo"/>
-                  <h1 className="App-title">Welcome to React</h1>
+                  <h1 className="App-title">Address Maven</h1>
               </header>
               <p className="App-intro">
                   Nine: {this.state.nine}
               </p>
               <button className="elf" onClick={this.getNine}>Get Nine</button>
               <hr>
+              </hr>
+          </div>
       );
   }
 
