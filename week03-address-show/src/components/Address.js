@@ -12,7 +12,7 @@ class Address extends Component {
         this.state = {
             address: address
         };
-        this.quiet = false;
+        this.quiet = true;
     }
 
     render() {
