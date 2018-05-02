@@ -24,15 +24,15 @@ export default class Address extends Component {
     fetchAddress(event) {
         this.setState({foo:'fetcher king'});
         const that = this;
-        const ip = '10.11.4.91:19000';
+        const ip = '10.0.0.201:19000';
         fetch('http://' + ip + '30025/all-data')
             .then((response) => response.json())
             .then(function(result) {
                 this.collection = result.allData;
                 that.setState({
                     foo: 'qux success',
-                    firstName: 'Hannah',
-                    lastName: 'Pittman',
+                    firstName: 'Patty',
+                    lastName: 'Murray',
                 });
             }).catch(function(ex) {
             that.setState({foo: 'qux error'});
