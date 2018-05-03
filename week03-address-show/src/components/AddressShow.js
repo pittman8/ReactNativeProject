@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import addresses from '../address-list';
+//import addresses from '../address-list';
 
 class AddressShow extends Component {
     constructor(props) {
         super(props);
-        this.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
+        console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
     }
 
     log(message, message2 = '', message3 = '') {
