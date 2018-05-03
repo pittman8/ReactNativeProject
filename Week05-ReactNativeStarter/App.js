@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { NativeRouter, Route, Link } from 'react-router-native';
-import Address from './Address';
+import ReactNativeStarter from './ReactNativeStarter';
 
 export default class App extends React.Component {
   render() {
@@ -10,7 +9,7 @@ export default class App extends React.Component {
           <Text style={styles.welcome}>
           Welcome to Expo Pittman!
           </Text>
-          <Address />
+          <ReactNativeStarter />
       </View>
     );
   }
