@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
-import Address from './components/Address';
-import './index.css';
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <div>
         <App />
-        <Address />
     </div>,
-    document.getElementById('root')
-);
+    document.getElementById('root'));
+registerServiceWorker();

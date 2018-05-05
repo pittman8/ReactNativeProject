@@ -8,15 +8,14 @@ class Address extends Component {
         super(props);
 
         this.addressIndex=0;
-        const address = addresses[this.addressIndex];
         this.state = {
-            address: address
+            address: addresses[this.addressIndex]
         };
-        this.quiet = true;
+        this.debug = true;
     }
 
     render() {
-        if (!this.quiet) { console.log("ADDRESS RENDER"); }
+        if (!this.debug) { console.log("ADDRESS RENDER"); }
         return (
             <div className="App">
                 <AddressShow address={this.state.address}
