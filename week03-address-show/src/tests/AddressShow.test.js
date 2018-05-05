@@ -71,28 +71,28 @@ describe('AddressShow Shallow Suite', function () {
         afterClickFieldTest('city: ' + addressTest.city, 0);
     });
 
-    it('renders and displays the city', () => {
-        defaultFieldTest('city: unknown', 0);
-        afterClickFieldTest('city: ' + addressTest.city, 0);
+    it('renders and displays the state', () => {
+        defaultFieldTest('state: unknown', 0);
+        afterClickFieldTest('state: ' + addressTest.state, 0);
     });
 
-    it('renders and displays the city', () => {
-        defaultFieldTest('city: unknown', 0);
-        afterClickFieldTest('city: ' + addressTest.city, 0);
+    it('renders and displays the zip', () => {
+        defaultFieldTest('zip: unknown', 0);
+        afterClickFieldTest('zip: ' + addressTest.zip, 0);
     });
 
-    it('renders and displays the city', () => {
-        defaultFieldTest('city: unknown', 0);
-        afterClickFieldTest('city: ' + addressTest.city, 0);
+    it('renders and displays the phone', () => {
+        defaultFieldTest('phone: unknown', 0);
+        afterClickFieldTest('phone: ' + addressTest.phone, 0);
     });
 
-    it('renders and displays the city', () => {
-        defaultFieldTest('city: unknown', 0);
-        afterClickFieldTest('city: ' + addressTest.city, 0);
+    it('renders and displays the fax', () => {
+        defaultFieldTest('fax: unknown', 0);
+        afterClickFieldTest('fax: ' + addressTest.fax, 0);
     });
 
-    it('renders and displays the city', () => {
-        defaultFieldTest('city: unknown', 0);
-        afterClickFieldTest('city: ' + addressTest.city, 0);
+    it('renders and displays the tollfree', () => {
+        defaultFieldTest('tollfree: unknown', 0);
+        afterClickFieldTest('tollfree: ' + addressTest.tollfree, 0);
     });
 });
