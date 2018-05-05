@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-//import addresses from '../address-list';
 
 class AddressShow extends Component {
     constructor(props) {
         super(props);
-        console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
+        this.debug = true;
+        if(this.debug) {
+            console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
+        }
     }
 
     log(message, message2 = '', message3 = '') {
-        if (!this.quiet) {
+        if (!this.debug) {
             const label = this.constructor.name + ': ';
             console.log(label, message, message2, message3);
         }
     }
 
     render() {
-        if (!this.quiet) { this.log("SHOW ADDRESS RENDER"); }
+        this.log("SHOW ADDRESS RENDER", this.props);
         return (
             <div className="App">
                 <p className="App-intro">
@@ -48,19 +50,10 @@ class AddressShow extends Component {
                 <p className="App-intro">
                     website: {this.props.address.website}
                 </p>
-                <button id="setAddress" onClick={this.props.onAddressChange}>Show Address</button>
+                <button id="showAddressClick" onClick={this.props.setAddress}>Show Address</button>
             </div>
         );
     }
-
-    onAddressChange = (event) => {
-        this.addressIndex = 1;
-        const address = addresses[this.addressIndex];
-
-        this.setState({
-            address: address
-        })
-    };
 }
 
 export default AddressShow;

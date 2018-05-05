@@ -19,12 +19,20 @@ class Address extends Component {
         return (
             <div className="App">
                 <AddressShow address={this.state.address}
-                    onAddressChange={this.onAddressChange}
+                    setAddress={this.setAddress}
                 />
             </div>
 
         );
     }
+
+    setAddress = (event) => {
+        this.addressIndex = 1;
+
+        this.setState({
+            address: addresses[this.addressIndex]
+        })
+    };
 }
 
 export default Address;
