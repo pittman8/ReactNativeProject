@@ -7,13 +7,10 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'NodeRouteBasics Pittman' });
 });
 
-router.get('/search', function(req, res) {
+router.get('/getFeetInMile', function(request, result) {
     'use strict';
-    console.log("Server side Search called.");
-    res.send({
-        result: 'success foo',
-        value: "search result is found",
-        errors: "none"
+    result.send({
+        result: '5280',
     });
 });
 
@@ -26,6 +23,17 @@ router.post('/calculateFeetFromMiles', function(request, response) {
     'use strict';
     console.log(request.body);
     response.send({result: request.body.miles * 5280});
+});
+
+router.get('/calculateCircumference', function(request, response) {
+    'use strict';
+    response.send({result: 2 * request.query.radius * Math.PI});
+});
+
+router.post('/calculateCircumference', function(request, response) {
+    'use strict';
+    console.log(request.body);
+    response.send({result: 2 * request.query.radius * Math.PI});
 });
 
 module.exports = router;
