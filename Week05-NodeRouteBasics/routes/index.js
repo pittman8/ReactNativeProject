@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'NodeRouteBasics Pittman' });
 });
 
-router.get('/search', function(req, res, next) {
+router.get('/search', function(req, res) {
     'use strict';
     console.log("Server side Search called.");
     res.send({
@@ -15,6 +15,17 @@ router.get('/search', function(req, res, next) {
         value: "search result is found",
         errors: "none"
     });
+});
+
+router.get('/calculateFeetFromMiles', function(request, response) {
+    'use strict';
+    response.send({result: request.query.miles * 5280});
+});
+
+router.post('/calculateFeetFromMiles', function(request, response) {
+    'use strict';
+    console.log(request.body);
+    response.send({result: request.body.miles * 5280});
 });
 
 module.exports = router;
