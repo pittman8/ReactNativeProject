@@ -21,34 +21,31 @@ class AddressShow extends Component {
         return (
             <div className="App">
                 <p className="App-intro">
-                    firstName: {this.props.address.firstName}
+                    First Name: {this.props.address.firstName}
                 </p>
                 <p className="App-intro">
-                    lastName: {this.props.address.lastName}
+                    Last Name: {this.props.address.lastName}
                 </p>
                 <p className="App-intro">
-                    address: {this.props.address.address}
+                    Address: {this.props.address.address}
                 </p>
                 <p className="App-intro">
-                    city: {this.props.address.city}
+                    City: {this.props.address.city}
                 </p>
                 <p className="App-intro">
-                    state: {this.props.address.state}
+                    State: {this.props.address.state}
                 </p>
                 <p className="App-intro">
-                    zip: {this.props.address.zip}
+                    Zip: {this.props.address.zip}
                 </p>
                 <p className="App-intro">
-                    phone: {this.props.address.phone}
+                    Phone: {this.props.address.phone}
                 </p>
                 <p className="App-intro">
-                    fax: {this.props.address.fax}
+                    Fax: {this.props.address.fax}
                 </p>
                 <p className="App-intro">
-                    tollfree: {this.props.address.tollfree}
-                </p>
-                <p className="App-intro">
-                    website: {this.props.address.website}
+                    Toll Free: {this.props.address.tollfree}
                 </p>
                 <button id="showAddressClick" onClick={this.props.setAddress}>Show Address</button>
             </div>

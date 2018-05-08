@@ -4,7 +4,7 @@ class GetFile extends Component {
     constructor() {
         super();
         this.state = {
-            nine: '0'
+            file: 'unknown'
         };
 
     }
@@ -13,18 +13,18 @@ class GetFile extends Component {
         return(
             <div className="GetFile">
                 <p className="App-intro">
-                    Nine: {this.state.nine}
+                    File: {this.state.file}
                 </p>
-                <button className="elf" onClick={this.getNine}>Get Nine</button>
+                <button className="elf" onClick={this.getFile}>Get File</button>
                 <hr>
                 </hr>
             </div>
         );
     }
 
-    getNine = () => {
+    getFile = () => {
         this.setState({
-            nine: '9'
+            file: 'url-file.js'
         })
     };
 }

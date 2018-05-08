@@ -52,47 +52,47 @@ describe('AddressShow Shallow Suite', function () {
     };
 
     it('renders and displays the first name', () => {
-        defaultFieldTest('firstName: unknown', 0);
-        afterClickFieldTest('firstName: ' + addressTest.firstName, 0);
+        defaultFieldTest('First Name: unknown', 0);
+        afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
     });
 
     it('renders and displays the last name', () => {
-        defaultFieldTest('lastName: unknown', 0);
-        afterClickFieldTest('lastName: ' + addressTest.lastName, 0);
+        defaultFieldTest('Last Name: unknown', 0);
+        afterClickFieldTest('Last Name: ' + addressTest.lastName, 0);
     });
 
     it('renders and displays the address', () => {
-        defaultFieldTest('address: unknown', 0);
-        afterClickFieldTest('address: ' + addressTest.address, 0);
+        defaultFieldTest('Address: unknown', 0);
+        afterClickFieldTest('Address: ' + addressTest.address, 0);
     });
 
     it('renders and displays the city', () => {
-        defaultFieldTest('city: unknown', 0);
-        afterClickFieldTest('city: ' + addressTest.city, 0);
+        defaultFieldTest('City: unknown', 0);
+        afterClickFieldTest('City: ' + addressTest.city, 0);
     });
 
     it('renders and displays the state', () => {
-        defaultFieldTest('state: unknown', 0);
-        afterClickFieldTest('state: ' + addressTest.state, 0);
+        defaultFieldTest('State: unknown', 0);
+        afterClickFieldTest('State: ' + addressTest.state, 0);
     });
 
     it('renders and displays the zip', () => {
-        defaultFieldTest('zip: unknown', 0);
-        afterClickFieldTest('zip: ' + addressTest.zip, 0);
+        defaultFieldTest('Zip: unknown', 0);
+        afterClickFieldTest('Zip: ' + addressTest.zip, 0);
     });
 
     it('renders and displays the phone', () => {
-        defaultFieldTest('phone: unknown', 0);
-        afterClickFieldTest('phone: ' + addressTest.phone, 0);
+        defaultFieldTest('Phone: unknown', 0);
+        afterClickFieldTest('Phone: ' + addressTest.phone, 0);
     });
 
     it('renders and displays the fax', () => {
-        defaultFieldTest('fax: unknown', 0);
-        afterClickFieldTest('fax: ' + addressTest.fax, 0);
+        defaultFieldTest('Fax: unknown', 0);
+        afterClickFieldTest('Fax: ' + addressTest.fax, 0);
     });
 
     it('renders and displays the tollfree', () => {
-        defaultFieldTest('tollfree: unknown', 0);
-        afterClickFieldTest('tollfree: ' + addressTest.tollfree, 0);
+        defaultFieldTest('Toll Free: unknown', 0);
+        afterClickFieldTest('Toll Free: ' + addressTest.tollfree, 0);
     });
 });

@@ -15,13 +15,13 @@ describe('GetFile Test', function() {
     it('renders and displays the word Nine', () => {
         const wrapper = shallow(<GetFile />);
         console.log(wrapper);
-        const welcome = <p className="App-intro">Nine: 0</p>;
+        const welcome = <p className="App-intro">File: unknown</p>;
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
     it('renders state of File paragraph after button click', () => {
         const wrapper = shallow(<GetFile />);
-        const nineSign = <p className="App-intro">Nine: 9</p>;
+        const nineSign = <p className="App-intro">File: url-file.js</p>;
         wrapper.find('button.elf').simulate('click');
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
