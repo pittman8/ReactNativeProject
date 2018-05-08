@@ -3,7 +3,7 @@ import AddressShow from '../components/AddressShow';
 import {configure, shallow} from 'enzyme';
 import addresses from "../address-list";
 import Adapter from 'enzyme-adapter-react-16';
-import '../index.css';
+import '../css/index.css';
 configure({adapter: new Adapter()});
 
 const address = addresses[0];
