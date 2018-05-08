@@ -1,5 +1,4 @@
 exports.circumference =
     function(radius) {
-        let result = Math.PI * (2 * radius);
-        return result;
+        return Math.PI * (2 * radius);
 }
