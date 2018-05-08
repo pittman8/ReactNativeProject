@@ -1,5 +1,5 @@
 module.exports = {
-    calculateCircumference: function(radius) {
+    calculateCircumference(radius) {
         return (2 * radius * Math.PI)
     }
 };

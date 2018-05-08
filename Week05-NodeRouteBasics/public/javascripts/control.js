@@ -11,6 +11,16 @@ function callServer() {
         .catch((ex) => {
             console.log(ex);
         });
+
+    fetch('/calculateCircumference', getPostOptions(query))
+        .then((response) => response.json())
+        .then((response) => {
+            const displayArea = document.getElementById('displayArea');
+            displayArea.innerHTML = JSON.stringify(response, null, 4);
+        })
+        .catch((ex) => {
+            console.log(ex);
+        });
 }
 
 window.onload = function() {

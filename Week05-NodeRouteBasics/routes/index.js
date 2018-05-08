@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var calculateCircumference = require('./utils');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     'use strict';
@@ -33,7 +35,7 @@ router.get('/calculateCircumference', function(request, response) {
 router.post('/calculateCircumference', function(request, response) {
     'use strict';
     console.log(request.body);
-    response.send({result: 2 * request.query.radius * Math.PI});
+    response.send({result: calculateCircumference});
 });
 
 module.exports = router;
