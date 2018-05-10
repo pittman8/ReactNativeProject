@@ -1,20 +1,44 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
 import '../css/menu.css';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        };
+    }
+
+    handleToggle = () => this.setState({ open: !this.state.open });
+
     render() {
         return(
         <div className="Header">
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <h1 className="App-title">Welcome To React</h1>
-        </header>
-            <ul>
-                <li><Link to="/">Address</Link></li>
-                <li><Link to="/get-file">Get File</Link></li>
-            </ul>
+            <AppBar
+                title="Address Maven"
+                iconClassNameRight="muidocs-icon-navigation-expand-more"
+                onLeftIconButtonClick={this.handleToggle}
+            />
+            <Drawer
+                docked={false}
+                width={200}
+                open={this.state.open}
+                onRequestChange={this.handleToggle}
+            >
+                <AppBar title="Address Maven"/>
+
+                <MenuItem
+                    primaryText='Address'
+                    containerElement={<Link to="/"/>}
+                    onClick={this.handleToggle}
+                />
+
+                {/*MORE MENU ITEMS HERE*/}
+            </Drawer>
         </div>
         );
     }
