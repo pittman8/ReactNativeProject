@@ -1,15 +1,14 @@
 import React from 'react';
 import AddressShow from '../components/AddressShow';
-import {configure, shallow} from 'enzyme';
-import addresses from "../address-list";
+import { configure, shallow } from 'enzyme';
+import addresses from '../address-list';
 import Adapter from 'enzyme-adapter-react-16';
 import '../css/index.css';
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 const address = addresses[0];
 
-describe('AddressShow Shallow Suite', function () {
-
+describe('AddressShow Shallow Suite', function() {
     const debug = false;
 
     const addressTest = {
@@ -30,22 +29,25 @@ describe('AddressShow Shallow Suite', function () {
     * @param {number} index - Index of HTML element you want to see.
     * @param {boolean} talkToMe - Speak even if quiet is true
     */
-    const getIndex = function (wrapper, index, talkToMe) {
+    const getIndex = function(wrapper, index, talkToMe) {
         if (debug || talkToMe) {
-            const ninep = wrapper.find('div#addressShow').childAt(index).debug();
+            const ninep = wrapper
+                .find('div#addressShow')
+                .childAt(index)
+                .debug();
             console.log('NINEP:', ninep);
         }
     };
 
     const defaultFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[0]}/>);
+        const wrapper = shallow(<AddressShow address={addresses[0]} />);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);
     };
 
     const afterClickFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[1]}/>);
+        const wrapper = shallow(<AddressShow address={addresses[1]} />);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);

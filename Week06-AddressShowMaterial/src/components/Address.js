@@ -7,7 +7,7 @@ class Address extends Component {
     constructor(props) {
         super(props);
 
-        this.addressIndex=0;
+        this.addressIndex = 0;
         this.state = {
             address: addresses[this.addressIndex]
         };
@@ -15,23 +15,25 @@ class Address extends Component {
     }
 
     render() {
-        if (!this.debug) { console.log("ADDRESS RENDER"); }
+        if (!this.debug) {
+            console.log('ADDRESS RENDER');
+        }
         return (
             <div className="App">
-                <AddressShow address={this.state.address}
+                <AddressShow
+                    address={this.state.address}
                     setAddress={this.setAddress}
                 />
             </div>
-
         );
     }
 
-    setAddress = (event) => {
+    setAddress = event => {
         this.addressIndex = 1;
 
         this.setState({
             address: addresses[this.addressIndex]
-        })
+        });
     };
 }
 

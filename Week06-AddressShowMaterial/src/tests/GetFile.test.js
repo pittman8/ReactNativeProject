@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {configure, shallow} from 'enzyme';
-import GetFile  from '../components/GetFile';
+import { configure, shallow } from 'enzyme';
+import GetFile from '../components/GetFile';
 import Adapter from 'enzyme-adapter-react-16';
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 describe('GetFile Test', function() {
-
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.unmountComponentAtNode(div);
