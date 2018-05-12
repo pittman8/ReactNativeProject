@@ -6,8 +6,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import '../css/index.css';
 configure({ adapter: new Adapter() });
 
-const address = addresses[0];
-
 describe('AddressShow Shallow Suite', function() {
     const debug = false;
 

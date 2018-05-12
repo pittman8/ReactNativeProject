@@ -28,7 +28,7 @@ class Address extends Component {
         );
     }
 
-    setAddress = event => {
+    setAddress = () => {
         this.addressIndex = 1;
 
         this.setState({
