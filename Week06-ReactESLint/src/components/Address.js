@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../App.css';
 import AddressShow from './AddressShow';
 import addresses from '../address-list';
 
@@ -28,7 +28,7 @@ class Address extends Component {
         );
     }
 
-    setAddress = event => {
+    setAddress = () => {
         this.addressIndex = 1;
 
         this.setState({

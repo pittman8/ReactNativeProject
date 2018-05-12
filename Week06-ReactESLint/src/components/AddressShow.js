@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddressShow extends Component {
     constructor(props) {
@@ -44,5 +45,19 @@ class AddressShow extends Component {
         );
     }
 }
+AddressShow.propTypes = {
+    address: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+        address: PropTypes.string,
+        city: PropTypes.string,
+        state: PropTypes.string,
+        zip: PropTypes.string,
+        phone: PropTypes.string,
+        fax: PropTypes.string,
+        tollfree: PropTypes.string
+    }),
+    setAddress: PropTypes.func
+};
 
 export default AddressShow;

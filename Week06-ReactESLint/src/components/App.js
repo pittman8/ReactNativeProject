@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../App.css';
 import Address from './Address';
 import Header from './Header';
 import GetFile from './GetFile';
-import { BrowserRouter, Route } from 'react-router-dom';
-import '../css/menu.css';
 
 class App extends Component {
     render() {
         return (
-            <BrowserRouter>
-                <div className="App">
-                    <Header />
-                    <Route exact path="/" component={Address} />
-                    <Route path="/get-file" component={GetFile} />
-                </div>
-            </BrowserRouter>
+            <div className="App">
+                <Header />
+                <GetFile />
+                <Address />
+            </div>
         );
     }
 }

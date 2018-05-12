@@ -3,37 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "eslint-config-prettier": "^2.9.0",
-    "prettier": "^1.12.1",
+    "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "bundle": "node_modules/.bin/webpack --watch",
-    "lint": "./node_modules/.bin/eslint .",
-    "eslint-check": "eslint --print-config App.js | eslint-config-prettier-check"
+    "eject": "react-scripts eject"
   },
-  "indent": [
-    "error",
-    4,
-    {
-      "SwitchCase": 1
-    }
-  ],
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "prettier-eslint": "^8.8.1",
     "react-test-renderer": "^16.3.2"
   }
 }

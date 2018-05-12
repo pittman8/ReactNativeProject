@@ -3,10 +3,8 @@ import AddressShow from '../components/AddressShow';
 import { configure, shallow } from 'enzyme';
 import addresses from '../address-list';
 import Adapter from 'enzyme-adapter-react-16';
-import '../css/index.css';
+import '../index.css';
 configure({ adapter: new Adapter() });
-
-const address = addresses[0];
 
 describe('AddressShow Shallow Suite', function() {
     const debug = false;
