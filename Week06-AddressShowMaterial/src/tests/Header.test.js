@@ -13,7 +13,7 @@ describe('Header Test', function() {
 
     it('renders and reads H1 text', () => {
         const wrapper = shallow(<Header />);
-        const welcome = <h1 className="App-title">Address Maven</h1>;
+        const welcome = <h1 className="Header">Address Maven</h1>;
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 });
