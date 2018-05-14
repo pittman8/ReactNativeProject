@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { configure, shallow } from 'enzyme';
 import GetFile from '../components/GetFile';
+import App from '../components/App';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
@@ -19,9 +20,13 @@ describe('GetFile Test', function() {
     });
 
     it('renders state of File paragraph after button click', () => {
-        const wrapper = shallow(<GetFile />);
-        const nineSign = <p className="App-intro">File: url-file.js</p>;
-        wrapper.find('button.elf').simulate('click');
-        expect(wrapper.contains(nineSign)).toEqual(true);
+        const wrapper = shallow(<App />);
+        //console.log(wrapper.debug());
+        const headerText = wrapper
+            .find('div')
+            .childAt(2)
+            .prop('path');
+        //console.log(headerText);
+        expect(headerText).toBe('/get-file');
     });
 });
