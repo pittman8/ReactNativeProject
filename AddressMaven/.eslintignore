@@ -1,0 +1,7 @@
+**/registerServiceWorker.js
+**/bundle.js
+.git
+**/node_modules/**
+**/bower_components/**
+**/build/static/js/main.2396ee66.js
+**/build/service-worker.js
