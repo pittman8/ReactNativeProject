@@ -1,14 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import GetFile from './GetFile';
+import Address from './Address';
+import Header from './Header';
+import { NativeRouter, Route } from 'react-router-native';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+        <NativeRouter>
+          <View style={styles.addressContainer}>
+              return (
+              <View style={styles.addressContainer}>
+                  <Header/>
+                  <Route exact path="/" component={Address}/>
+                  <Route path="/get-file" component={GetFile}/>
+              </View>
+              );
+          </View>
+        </NativeRouter>
     );
   }
 }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import FontIcon from 'material-ui/FontIcon';
-import { red500 } from 'material-ui/styles/colors';
 import styles from './elf-styles';
-import RaisedButton from 'material-ui/RaisedButton';
+import  { Text, View, Button } from 'react-native';
 
 class GetFile extends Component {
     constructor() {
@@ -14,21 +12,17 @@ class GetFile extends Component {
 
     render() {
         return (
-            <div className="GetFile">
-                <p className="App-intro">File: {this.state.file}</p>
-                <RaisedButton
-                    label="Get File"
-                    labelPosition="before"
-                    primary={true}
-                    icon={
-                        <FontIcon className="material-icons" color={red500}>
-                            rss_feed
-                        </FontIcon>
-                    }
-                    style={styles.button}
-                    onClick={this.getFile}
-                />
-            </div>
+            <View className="GetFile">
+                <Text>File: {this.state.file}</Text>
+                <View style={styles.buttonView} >
+                    <Button
+                        onPress={this.getFile}
+                        title="Get Data"
+                        color="#841584"
+                        accessibilityLabel="Learn more about this purple button"
+                    />
+                </View>
+            </View>
         );
     }
 

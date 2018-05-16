@@ -1,51 +1,28 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import '../css/menu.css';
-import '../css/App.css';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import React, {Component} from 'react';
+import {Link} from 'react-router-native';
+import {Text, View} from 'react-native';
+import styles from "./elf-styles";
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false
-        };
-    }
-
-    handleToggle = () => this.setState({ open: !this.state.open });
 
     render() {
         return (
-            <div className="Header">
-                <AppBar
-                    title="Address Maven"
-                    iconClassNameRight="muidocs-icon-navigation-expand-more"
-                    onLeftIconButtonClick={this.handleToggle}
-                />
-                <Drawer
-                    docked={false}
-                    width={200}
-                    open={this.state.open}
-                    onRequestChange={this.handleToggle}
-                >
-                    <AppBar title="Address Maven" />
-
-                    <MenuItem
-                        primaryText="Address"
-                        containerElement={<Link to="/" />}
-                        onClick={this.handleToggle}
-                    />
-
-                    <MenuItem
-                        primaryText="Get File"
-                        containerElement={<Link to="/get-file" />}
-                        onClick={this.handleToggle}
-                    />
-                </Drawer>
-            </div>
+            <View style={styles.nav}>
+                <Link
+                    to="/"
+                    underlayColor='#f0f4f7'
+                    style={styles.navItem}>
+                    <Text>Address</Text>
+                </Link>
+                <Link
+                    to="/get-file"
+                    underlayColor='#f0f4f7'
+                    style={styles.navItem}>
+                    <Text>Get File</Text>
+                </Link>
+            </View>
         );
     }
 }
+
 export default Header;

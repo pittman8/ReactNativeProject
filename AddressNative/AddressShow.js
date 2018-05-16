@@ -1,55 +1,37 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
+import  { Text, View, Button } from 'react-native';
 import styles from './elf-styles';
 import PropTypes from 'prop-types';
 
 class AddressShow extends Component {
-    constructor(props) {
-        super(props);
-        this.debug = true;
-        if (this.debug) {
-            console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
-        }
-    }
-
-    log(message, message2 = '', message3 = '') {
-        if (!this.debug) {
-            const label = this.constructor.name + ': ';
-            console.log(label, message, message2, message3);
-        }
-    }
-
     render() {
-        this.log('SHOW ADDRESS RENDER', this.props);
         return (
-            <div className="App">
-                <p className="App-intro">
+            <View className="App">
+                <Text>
                     First Name: {this.props.address.firstName}
-                </p>
-                <p className="App-intro">
+                </Text>
+                <Text>
                     Last Name: {this.props.address.lastName}
-                </p>
-                <p className="App-intro">
+                </Text>
+                <Text>
                     Address: {this.props.address.address}
-                </p>
-                <p className="App-intro">City: {this.props.address.city}</p>
-                <p className="App-intro">State: {this.props.address.state}</p>
-                <p className="App-intro">Zip: {this.props.address.zip}</p>
-                <p className="App-intro">Phone: {this.props.address.phone}</p>
-                <p className="App-intro">Fax: {this.props.address.fax}</p>
-                <p className="App-intro">
+                </Text>
+                <Text>City: {this.props.address.city}</Text>
+                <Text>State: {this.props.address.state}</Text>
+                <Text>Zip: {this.props.address.zip}</Text>
+                <Text>Phone: {this.props.address.phone}</Text>
+                <Text>Fax: {this.props.address.fax}</Text>
+                <Text>
                     Toll Free: {this.props.address.tollfree}
-                </p>
-                <RaisedButton
-                    label="Set Address"
-                    labelPosition="before"
-                    primary={true}
-                    icon={<ActionAndroid />}
-                    style={styles.button}
-                    onClick={this.props.setAddress}
-                />
-            </div>
+                </Text>
+                <View style={styles.buttonView} >
+                    <Button
+                        onPress={this.props.setAddress}
+                        title="Set Address"
+                        color="#841584"
+                    />
+                </View>
+            </View>
         );
     }
 }
