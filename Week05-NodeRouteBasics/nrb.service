@@ -1,0 +1,13 @@
+[Service]
+ExecStart=/usr/bin/node /home/bcuser/bin/elven-site/bin/www
+WorkingDirectory=/home/ubuntu/bin/nrb
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=elven-site
+User=bcuser
+Group=bcuser
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
