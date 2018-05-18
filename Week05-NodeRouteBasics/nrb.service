@@ -1,5 +1,5 @@
 [Service]
-ExecStart=/usr/bin/node /home/bcuser/bin/elven-site/bin/www
+ExecStart=/usr/bin/node /home/bcuser/bin/nrb/bin/www
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
