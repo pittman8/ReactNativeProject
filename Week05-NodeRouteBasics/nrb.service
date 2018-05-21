@@ -8,7 +8,7 @@ SyslogIdentifier=nrb
 User=ubuntu
 Group=ubuntu
 Environment=NODE_ENV=production
-Environment=PORT=30026
+Environment=PORT=30025
 
 [Install]
 WantedBy=multi-user.target
