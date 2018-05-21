@@ -1,5 +1,5 @@
 [Service]
-ExecStart=/bin/bash /home/bcuser/npm/bin/npm start
+ExecStart= /home/bcuser/npm/bin/npm start
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
