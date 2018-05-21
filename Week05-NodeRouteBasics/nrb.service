@@ -1,14 +1,14 @@
 [Service]
-ExecStart=/usr/bin/node /home/bcuser/bin/nrb/bin/www
+ExecStart=/home/bcuser/npm/bin/npm start
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=nrb
-User=bcuser
-Group=bcuser
+User=ubuntu
+Group=ubuntu
 Environment=NODE_ENV=production
-
+Environment=PORT=30026
 
 [Install]
 WantedBy=multi-user.target
