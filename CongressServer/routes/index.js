@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const fs = require('fs');
+
 /* GET home page. */
 router.get('/', function(req, res, next) { 'use strict';
   res.render('index', { title: 'CongressServer' });
@@ -22,7 +24,7 @@ function readFile(fileName) {
 
 router.get('/address-list', function(req, res) {
     'use strict';
-    readFile(__dirname + '/address-list.json')
+    readFile('address-list.json')
         .then((json) => {
             const addressAsJson = JSON.parse(json.result);
             res.send(addressAsJson);

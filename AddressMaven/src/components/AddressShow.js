@@ -42,6 +42,12 @@ class AddressShow extends Component {
                     Toll Free: {this.props.address.tollfree}
                 </p>
                 <RaisedButton
+                    id="setAddress"
+                    primary={true}
+                    onClick={(event) => this.props.setAddress(-1, event)}>
+                    Previous
+                </RaisedButton>
+                <RaisedButton
                     label="Set Address"
                     labelPosition="before"
                     primary={true}
@@ -53,7 +59,7 @@ class AddressShow extends Component {
                     id="setAddress"
                     primary={true}
                     onClick={(event) => this.props.setAddress(1, event)}>
-                    Forward
+                    Next
                 </RaisedButton>
             </div>
         );
