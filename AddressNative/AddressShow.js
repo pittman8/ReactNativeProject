@@ -26,8 +26,22 @@ class AddressShow extends Component {
                 </Text>
                 <View style={styles.buttonView} >
                     <Button
+                        onPress={(event) => this.props.setAddress(-1, event)}
+                        title="Previous"
+                        color="#841584"
+                    />
+                </View>
+                <View style={styles.buttonView} >
+                    <Button
                         onPress={this.props.setAddress}
                         title="Set Address"
+                        color="#841584"
+                    />
+                </View>
+                <View style={styles.buttonView} >
+                    <Button
+                        onPress={(event) => this.props.setAddress(1, event)}
+                        title="Next"
                         color="#841584"
                     />
                 </View>
