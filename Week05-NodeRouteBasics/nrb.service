@@ -1,14 +1,13 @@
 [Service]
-ExecStart= /home/bcuser/npm/bin/npm start
+ExecStart=/usr/bin/node /home/ubuntu/bin/nrb/bin/www
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=nrb
+SyslogIdentifier=elven-site
 User=ubuntu
 Group=ubuntu
 Environment=NODE_ENV=production
-Environment=PORT=30025
 
 [Install]
 WantedBy=multi-user.target
