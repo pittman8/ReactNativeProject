@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import AddressShow from './AddressShow';
-import addresses from '../address-list';
+import tempAddressList from '../address-list';
 
 class Address extends Component {
     constructor(props) {
         super(props);
 
+        this.debug = false;
         this.addressIndex = 0;
+        this.addressList = null;
         this.state = {
-            address: addresses[this.addressIndex]
+            address: tempAddressList[this.addressIndex]
         };
-        this.debug = true;
+
+        this.getAddress();
     }
 
     render() {
@@ -28,11 +31,23 @@ class Address extends Component {
         );
     }
 
-    setAddress = () => {
-        this.addressIndex = 1;
+    getAddress = () => {
+        fetch('/address-list')
+            .then((response) => response.json())
+            .then((addressListFromServer) => {
+                console.log(addressListFromServer);
+                this.addressList = addressListFromServer;
+            })
+            .catch((ex) => {
+                console.log(ex);
+            });
+    };
 
+
+    setAddress = (offset) => {
+        this.addressIndex += offset;
         this.setState({
-            address: addresses[this.addressIndex]
+            address: this.addressList[this.addressIndex]
         });
     };
 }

@@ -49,6 +49,12 @@ class AddressShow extends Component {
                     style={styles.button}
                     onClick={this.props.setAddress}
                 />
+                <RaisedButton
+                    id="setAddress"
+                    primary={true}
+                    onClick={(event) => this.props.setAddress(1, event)}>
+                    Forward
+                </RaisedButton>
             </div>
         );
     }

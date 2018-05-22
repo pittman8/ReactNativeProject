@@ -2,6 +2,7 @@
   "name": "week02-react-jest",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:30026",
   "dependencies": {
     "material-ui": "^0.20.1",
     "prop-types": "^15.6.1",
