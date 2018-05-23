@@ -26,6 +26,8 @@ class Address extends Component {
                 <AddressShow
                     address={this.state.address}
                     setAddress={this.setAddress}
+                    nextAddress={this.nextAddress}
+                    previousAddress={this.previousAddress}
                 />
             </div>
         );
@@ -44,12 +46,26 @@ class Address extends Component {
     };
 
 
-    setAddress = (offset) => {
-        //this.addressIndex += offset;
+    setAddress = () => {
         this.setState({
             address: this.addressList[this.addressIndex]
         });
-        //this.addressIndex += offset;
+    };
+
+    nextAddress = () => {
+        if(this.addressIndex !== 99) { // don't go after array ends
+            this.setState({
+                address: this.addressList[this.addressIndex += 1]
+            });
+        }
+    };
+
+    previousAddress = () => {
+        if(this.addressIndex > 0) { // don't go before array starts
+            this.setState({
+                address: this.addressList[this.addressIndex -= 1]
+            });
+        }
     };
 }
 

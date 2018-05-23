@@ -42,10 +42,10 @@ class AddressShow extends Component {
                     Contact: {this.props.address.contact}
                 </p>
                 <RaisedButton
+                    label="Previous"
                     id="setAddress"
                     primary={true}
-                    onClick={(event) => this.props.setAddress(-1, event)}>
-                    Previous
+                    onClick={this.props.previousAddress}>
                 </RaisedButton>
                 <RaisedButton
                     label="Set Address"
@@ -56,10 +56,10 @@ class AddressShow extends Component {
                     onClick={this.props.setAddress}
                 />
                 <RaisedButton
+                    label="Next"
                     id="setAddress"
                     primary={true}
-                    onClick={(event) => this.props.setAddress(1, event)}>
-                    Next
+                    onClick={this.props.nextAddress}>
                 </RaisedButton>
             </div>
         );
