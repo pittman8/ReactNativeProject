@@ -57,10 +57,10 @@ describe('Address tests', function() {
         });
     });
 
-    it('renders and displays the default address', () => {
+    it('renders and displays the default street', () => {
         const wrapper = shallow(<Address />);
         //console.log(wrapper.find('AddressShow').prop('address'));
-        expect(wrapper.find('AddressShow').prop('address').address).toEqual(
+        expect(wrapper.find('AddressShow').prop('address').street).toEqual(
             'unknown'
         );
     });
@@ -70,7 +70,7 @@ describe('Address tests', function() {
         wrapper.instance().setAddress();
         setImmediate(() => {
             wrapper.update();
-            expect(wrapper.find('AddressShow').prop('address').address).toEqual(
+            expect(wrapper.find('AddressShow').prop('address').street).toEqual(
                 '154 Russell Senate Office Building'
             );
         });
@@ -118,7 +118,7 @@ describe('Address tests', function() {
         const wrapper = shallow(<Address />);
         //console.log(wrapper.find('AddressShow').prop('address'));
         expect(wrapper.find('AddressShow').prop('address').zip).toEqual(
-            'unknown'
+            ''
         );
     });
 
@@ -152,26 +152,26 @@ describe('Address tests', function() {
         });
     });
 
-    it('renders and displays the default fax', () => {
+    it('renders and displays the default website', () => {
         const wrapper = shallow(<Address />);
         //console.log(wrapper.find('AddressShow').prop('address'));
-        expect(wrapper.find('AddressShow').prop('address').fax).toEqual(
+        expect(wrapper.find('AddressShow').prop('address').website).toEqual(
             'unknown'
         );
     });
 
-    it('renders state of fax after button click', () => {
+    it('renders state of website after button click', () => {
         const wrapper = shallow(<Address addressList={addresses} />);
         wrapper.instance().setAddress();
         setImmediate(() => {
             wrapper.update();
-            expect(wrapper.find('AddressShow').prop('address').fax).toEqual(
-                '(202) 224-0238'
+            expect(wrapper.find('AddressShow').prop('address').website).toEqual(
+                'https://www.murray.senate.gov/'
             );
         });
     });
 
-    it('renders and displays the default tollfree', () => {
+    it('renders and displays the default contact', () => {
         const wrapper = shallow(<Address />);
         //console.log(wrapper.find('AddressShow').prop('address'));
         expect(wrapper.find('AddressShow').prop('address').tollfree).toEqual(
@@ -179,7 +179,7 @@ describe('Address tests', function() {
         );
     });
 
-    it('renders state of tollfree after button click', () => {
+    it('renders state of contact after button click', () => {
         const wrapper = shallow(<Address addressList={addresses} />);
         wrapper.instance().setAddress();
         setImmediate(() => {
