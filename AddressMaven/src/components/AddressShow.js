@@ -31,15 +31,15 @@ class AddressShow extends Component {
                     Last Name: {this.props.address.lastName}
                 </p>
                 <p className="App-intro">
-                    Address: {this.props.address.address}
+                    Address: {this.props.address.street}
                 </p>
                 <p className="App-intro">City: {this.props.address.city}</p>
                 <p className="App-intro">State: {this.props.address.state}</p>
                 <p className="App-intro">Zip: {this.props.address.zip}</p>
                 <p className="App-intro">Phone: {this.props.address.phone}</p>
-                <p className="App-intro">Fax: {this.props.address.fax}</p>
+                <p className="App-intro">Website: {this.props.address.website}</p>
                 <p className="App-intro">
-                    Toll Free: {this.props.address.tollfree}
+                    Contact: {this.props.address.contact}
                 </p>
                 <RaisedButton
                     id="setAddress"
@@ -70,13 +70,13 @@ AddressShow.propTypes = {
     address: PropTypes.shape({
         firstName: PropTypes.string,
         lastName: PropTypes.string,
-        address: PropTypes.string,
+        street: PropTypes.string,
         city: PropTypes.string,
         state: PropTypes.string,
         zip: PropTypes.string,
         phone: PropTypes.string,
-        fax: PropTypes.string,
-        tollfree: PropTypes.string
+        website: PropTypes.string,
+        contact: PropTypes.string
     }),
     setAddress: PropTypes.func
 };

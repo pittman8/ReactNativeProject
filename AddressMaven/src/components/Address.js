@@ -45,10 +45,11 @@ class Address extends Component {
 
 
     setAddress = (offset) => {
-        this.addressIndex += offset;
+        //this.addressIndex += offset;
         this.setState({
             address: this.addressList[this.addressIndex]
         });
+        //this.addressIndex += offset;
     };
 }
 

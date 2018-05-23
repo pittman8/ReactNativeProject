@@ -1,15 +1,14 @@
-const unknown = 'unknown';
 const addresses = [
     {
-        firstName: unknown,
-        lastName: unknown,
-        address: unknown,
-        city: unknown,
-        state: unknown,
-        zip: unknown,
-        phone: unknown,
-        fax: unknown,
-        tollfree: unknown
+        firstName: "",
+        lastName: "",
+        street: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone: "",
+        website: "",
+        contact: ""
     },
     {
         firstName: 'Patty',
