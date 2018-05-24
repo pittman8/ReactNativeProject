@@ -37,7 +37,9 @@ class AddressShow extends Component {
                 <p className="App-intro">State: {this.props.address.state}</p>
                 <p className="App-intro">Zip: {this.props.address.zip}</p>
                 <p className="App-intro">Phone: {this.props.address.phone}</p>
-                <p className="App-intro">Website: {this.props.address.website}</p>
+                <p className="App-intro">
+                    Website: {this.props.address.website}
+                </p>
                 <p className="App-intro">
                     Contact: {this.props.address.contact}
                 </p>
@@ -45,8 +47,8 @@ class AddressShow extends Component {
                     label="Previous"
                     id="setAddress"
                     primary={true}
-                    onClick={this.props.previousAddress}>
-                </RaisedButton>
+                    onClick={this.props.previousAddress}
+                />
                 <RaisedButton
                     label="Set Address"
                     labelPosition="before"
@@ -59,8 +61,8 @@ class AddressShow extends Component {
                     label="Next"
                     id="setAddress"
                     primary={true}
-                    onClick={this.props.nextAddress}>
-                </RaisedButton>
+                    onClick={this.props.nextAddress}
+                />
             </div>
         );
     }
@@ -78,7 +80,9 @@ AddressShow.propTypes = {
         website: PropTypes.string,
         contact: PropTypes.string
     }),
-    setAddress: PropTypes.func
+    setAddress: PropTypes.func,
+    previousAddress: PropTypes.func,
+    nextAddress: PropTypes.func
 };
 
 export default AddressShow;
