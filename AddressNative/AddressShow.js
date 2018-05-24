@@ -20,13 +20,13 @@ class AddressShow extends Component {
                 <Text>State: {this.props.address.state}</Text>
                 <Text>Zip: {this.props.address.zip}</Text>
                 <Text>Phone: {this.props.address.phone}</Text>
-                <Text>Fax: {this.props.address.fax}</Text>
+                <Text>Website: {this.props.address.website}</Text>
                 <Text>
-                    Toll Free: {this.props.address.tollfree}
+                    Contact: {this.props.address.contact}
                 </Text>
                 <View style={styles.buttonView} >
                     <Button
-                        onPress={(event) => this.props.setAddress(-1, event)}
+                        onPress={this.props.previousAddress}
                         title="Previous"
                         color="#841584"
                     />
@@ -40,7 +40,7 @@ class AddressShow extends Component {
                 </View>
                 <View style={styles.buttonView} >
                     <Button
-                        onPress={(event) => this.props.setAddress(1, event)}
+                        onPress={this.props.nextAddress}
                         title="Next"
                         color="#841584"
                     />
@@ -59,8 +59,8 @@ AddressShow.propTypes = {
         state: PropTypes.string,
         zip: PropTypes.string,
         phone: PropTypes.string,
-        fax: PropTypes.string,
-        tollfree: PropTypes.string
+        website: PropTypes.string,
+        contact: PropTypes.string
     }),
     setAddress: PropTypes.func
 };

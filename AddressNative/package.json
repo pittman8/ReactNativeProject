@@ -2,6 +2,7 @@
   "name": "AddressNative",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://10.11.1.49:30026",
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",

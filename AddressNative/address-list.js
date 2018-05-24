@@ -8,8 +8,8 @@ const addresses = [
         state: unknown,
         zip: unknown,
         phone: unknown,
-        fax: unknown,
-        tollfree: unknown
+        website: unknown,
+        contact: unknown
     },
     {
         firstName: 'Patty',
@@ -19,8 +19,8 @@ const addresses = [
         state: 'D.C.',
         zip: '20510',
         phone: '(202) 224-2621',
-        fax: '(202) 224-0238',
-        tollfree: '(866) 481-9186'
+        website: 'https://www.murray.senate.gov/',
+        contact: 'https://www.murray.senate.gov/public/index.cfm/contactme'
     }
 ];
 
