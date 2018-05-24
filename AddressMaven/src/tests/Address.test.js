@@ -65,7 +65,7 @@ describe('Address tests', function() {
         );
     });
 
-    it('renders state of address after button click', () => {
+    it('renders state of street after button click', () => {
         const wrapper = shallow(<Address addressList={addresses} />);
         wrapper.instance().setAddress();
         setImmediate(() => {
@@ -118,7 +118,7 @@ describe('Address tests', function() {
         const wrapper = shallow(<Address />);
         //console.log(wrapper.find('AddressShow').prop('address'));
         expect(wrapper.find('AddressShow').prop('address').zip).toEqual(
-            ''
+            'unknown'
         );
     });
 
@@ -185,8 +185,8 @@ describe('Address tests', function() {
         setImmediate(() => {
             wrapper.update();
             expect(
-                wrapper.find('AddressShow').prop('address').tollfree
-            ).toEqual('(866) 481-9186');
+                wrapper.find('AddressShow').prop('address').contact
+            ).toEqual('https://www.murray.senate.gov/public/index.cfm/contactme');
         });
     });
 });
