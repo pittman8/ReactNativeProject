@@ -4,7 +4,7 @@ import styles from './elf-styles';
 import AddressShow from './AddressShow';
 import tempAddressList from './address-list';
 
-export default class Address extends React.Component {
+export default class Address extends Component {
     constructor(props) {
         super(props);
         this.addressIndex = 0;
@@ -27,19 +27,18 @@ export default class Address extends React.Component {
                         nextAddress={this.nextAddress}
                     />
                 </View>
-
             </View>
         );
     }
 
     getAddress = () => {
-        fetch('http://10.11.1.49:30026/address-list')
-            .then((response) => response.json())
-            .then((addressListFromServer) => {
+        fetch('http://10.0.0.12:30026/address-list')
+            .then(response => response.json())
+            .then(addressListFromServer => {
                 console.log(addressListFromServer);
                 this.addressList = addressListFromServer;
             })
-            .catch((ex) => {
+            .catch(ex => {
                 console.log(ex);
             });
     };
@@ -51,17 +50,19 @@ export default class Address extends React.Component {
     };
 
     nextAddress = () => {
-        if(this.addressIndex !== 99) { // don't go after array ends
+        if (this.addressIndex !== 99) {
+            // don't go after array ends
             this.setState({
-                address: this.addressList[this.addressIndex += 1]
+                address: this.addressList[(this.addressIndex += 1)]
             });
         }
     };
 
     previousAddress = () => {
-        if(this.addressIndex > 0) { // don't go before array starts
+        if (this.addressIndex > 0) {
+            // don't go before array starts
             this.setState({
-                address: this.addressList[this.addressIndex -= 1]
+                address: this.addressList[(this.addressIndex -= 1)]
             });
         }
     };

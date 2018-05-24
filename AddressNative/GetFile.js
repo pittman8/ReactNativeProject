@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './elf-styles';
-import  { Text, View, Button } from 'react-native';
+import { Text, View, Button } from 'react-native';
 
 class GetFile extends Component {
     constructor() {
@@ -14,7 +14,7 @@ class GetFile extends Component {
         return (
             <View className="GetFile">
                 <Text>File: {this.state.file}</Text>
-                <View style={styles.buttonView} >
+                <View style={styles.buttonView}>
                     <Button
                         onPress={this.getFile}
                         title="Get Data"
