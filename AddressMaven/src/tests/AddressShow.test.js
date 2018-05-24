@@ -17,8 +17,8 @@ describe('AddressShow Shallow Suite', function() {
         state: 'D.C.',
         zip: '20510',
         phone: '(202) 224-2621',
-        fax: '(202) 224-0238',
-        tollfree: '(866) 481-9186'
+        website: 'https://www.murray.senate.gov/',
+        contact: 'https://www.murray.senate.gov/public/index.cfm/contactme'
     };
 
     /*
@@ -86,13 +86,13 @@ describe('AddressShow Shallow Suite', function() {
         afterClickFieldTest('Phone: ' + addressTest.phone, 0);
     });
 
-    it('renders and displays the fax', () => {
-        defaultFieldTest('Fax: unknown', 0);
-        afterClickFieldTest('Fax: ' + addressTest.fax, 0);
+    it('renders and displays the website', () => {
+        defaultFieldTest('Website: unknown', 0);
+        afterClickFieldTest('Website: ' + addressTest.website, 0);
     });
 
-    it('renders and displays the tollfree', () => {
-        defaultFieldTest('Toll Free: unknown', 0);
-        afterClickFieldTest('Toll Free: ' + addressTest.tollfree, 0);
+    it('renders and displays the contact', () => {
+        defaultFieldTest('Contact: unknown', 0);
+        afterClickFieldTest('Contact: ' + addressTest.contact, 0);
     });
 });
