@@ -9,7 +9,7 @@ class AddressShow extends Component {
             <View className="App">
                 <Text>First Name: {this.props.address.firstName}</Text>
                 <Text>Last Name: {this.props.address.lastName}</Text>
-                <Text>Address: {this.props.address.address}</Text>
+                <Text>Street: {this.props.address.street}</Text>
                 <Text>City: {this.props.address.city}</Text>
                 <Text>State: {this.props.address.state}</Text>
                 <Text>Zip: {this.props.address.zip}</Text>
@@ -46,7 +46,7 @@ AddressShow.propTypes = {
     address: PropTypes.shape({
         firstName: PropTypes.string,
         lastName: PropTypes.string,
-        address: PropTypes.string,
+        street: PropTypes.string,
         city: PropTypes.string,
         state: PropTypes.string,
         zip: PropTypes.string,

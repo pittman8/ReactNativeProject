@@ -19,7 +19,6 @@ class GetFile extends Component {
                         onPress={this.getFile}
                         title="Get Data"
                         color="#841584"
-                        accessibilityLabel="Learn more about this purple button"
                     />
                 </View>
             </View>

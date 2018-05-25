@@ -3,7 +3,7 @@ const addresses = [
     {
         firstName: unknown,
         lastName: unknown,
-        address: unknown,
+        street: unknown,
         city: unknown,
         state: unknown,
         zip: unknown,
@@ -14,7 +14,7 @@ const addresses = [
     {
         firstName: 'Patty',
         lastName: 'Murray',
-        address: '154 Russell Senate Office Building',
+        street: '154 Russell Senate Office Building',
         city: 'Washington',
         state: 'D.C.',
         zip: '20510',
