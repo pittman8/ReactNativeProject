@@ -13,6 +13,7 @@
     "jest-expo": "~27.0.0",
     "jest-serializer-enzyme": "^1.0.0",
     "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.4.0",
     "react-native-scripts": "^1.14.0",
     "react-test-renderer": "16.3.1"
   },
@@ -22,7 +23,7 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "jest": {
     "preset": "jest-expo",
@@ -31,6 +32,14 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/registerServiceWorker.js",
+      "!**/elf-styles.js",
+      "!src/index.js"
     ]
   },
   "dependencies": {
@@ -38,7 +47,6 @@
     "material-ui": "^0.20.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
-    "react-dom": "^16.4.0",
     "react-native": "^0.55.4",
     "react-router-dom": "^4.2.2",
     "react-router-native": "^4.2.0",

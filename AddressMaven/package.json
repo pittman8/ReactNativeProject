@@ -25,5 +25,17 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.8.2",
     "react-test-renderer": "^16.3.2"
+  },
+
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/registerServiceWorker.js",
+      "!**/elf-styles.js",
+      "!src/index.js"
+    ]
   }
+
 }
