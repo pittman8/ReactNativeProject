@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import FontIcon from 'material-ui/FontIcon';
-import { red500 } from 'material-ui/styles/colors';
-import styles from './elf-styles';
-import RaisedButton from 'material-ui/RaisedButton';
+import '../css/App.css';
+import Button from '@material-ui/core/Button';
 
 class GetFile extends Component {
     constructor() {
@@ -16,18 +14,11 @@ class GetFile extends Component {
         return (
             <div className="GetFile">
                 <p className="App-intro">File: {this.state.file}</p>
-                <RaisedButton
-                    label="Get File"
-                    labelPosition="before"
-                    primary={true}
-                    icon={
-                        <FontIcon className="material-icons" color={red500}>
-                            rss_feed
-                        </FontIcon>
-                    }
-                    style={styles.button}
+                <Button
+                    variant="raised"
+                    color="primary"
                     onClick={this.getFile}
-                />
+                >Get File</Button>
             </div>
         );
     }

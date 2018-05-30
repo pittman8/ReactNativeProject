@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
-import styles from './elf-styles';
+import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
 class AddressShow extends Component {
@@ -41,14 +39,11 @@ class AddressShow extends Component {
                 <p className="App-intro">
                     Toll Free: {this.props.address.tollfree}
                 </p>
-                <RaisedButton
-                    label="Set Address"
-                    labelPosition="before"
-                    primary={true}
-                    icon={<ActionAndroid />}
-                    style={styles.button}
+                <Button
+                    variant="raised"
+                    color="primary"
                     onClick={this.props.setAddress}
-                />
+                >Set Address</Button>
             </div>
         );
     }
