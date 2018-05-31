@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { configure, shallow } from 'enzyme';
 import Address from '../components/Address';
 import Adapter from 'enzyme-adapter-react-16';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import addresses from '../address-list';
 configure({ adapter: new Adapter() });
 

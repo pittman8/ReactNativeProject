@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
-import styles from './elf-styles';
+import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
 class AddressShow extends Component {
@@ -43,26 +41,21 @@ class AddressShow extends Component {
                 <p className="App-intro">
                     Contact: {this.props.address.contact}
                 </p>
-                <RaisedButton
-                    label="Previous"
-                    id="setAddress"
-                    primary={true}
+                <Button
+                    variant="raised"
+                    color="primary"
                     onClick={this.props.previousAddress}
-                />
-                <RaisedButton
-                    label="Set Address"
-                    labelPosition="before"
-                    primary={true}
-                    icon={<ActionAndroid />}
-                    style={styles.button}
+                >Previous</Button>
+                <Button
+                    variant="raised"
+                    color="primary"
                     onClick={this.props.setAddress}
-                />
-                <RaisedButton
-                    label="Next"
-                    id="setAddress"
-                    primary={true}
+                >Set Address</Button>
+                <Button
+                    variant="raised"
+                    color="primary"
                     onClick={this.props.nextAddress}
-                />
+                >Next</Button>
             </div>
         );
     }
