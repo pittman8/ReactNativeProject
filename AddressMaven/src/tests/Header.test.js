@@ -6,12 +6,20 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
+import { createMuiTheme } from '@material-ui/core/styles/index';
+import Typography from '@material-ui/core/Typography';
 
 describe('Header Test', function() {
+    const themeDark = createMuiTheme({
+        palette: {
+            type: 'dark'
+        }
+    });
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
-            <MuiThemeProvider>
+            <MuiThemeProvider theme={themeDark}>
                 <BrowserRouter>
                     <Header />
                 </BrowserRouter>
@@ -23,11 +31,7 @@ describe('Header Test', function() {
 
     it('renders and reads Title text', () => {
         const wrapper = shallow(<Header />);
-        const headerText = wrapper
-            .find('AppBar')
-            .first()
-            .prop('title');
-        console.log('HeaderTest', headerText);
-        expect(headerText).toBe('Address Maven');
+        const target = <Typography>Address Maven</Typography>;
+        expect(wrapper.dive().containsMatchingElement(target)).toBe(true);
     });
 });

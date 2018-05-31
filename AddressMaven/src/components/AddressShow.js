@@ -45,17 +45,23 @@ class AddressShow extends Component {
                     variant="raised"
                     color="primary"
                     onClick={this.props.previousAddress}
-                >Previous</Button>
+                >
+                    Previous
+                </Button>
                 <Button
                     variant="raised"
                     color="primary"
                     onClick={this.props.setAddress}
-                >Set Address</Button>
+                >
+                    Set Address
+                </Button>
                 <Button
                     variant="raised"
                     color="primary"
                     onClick={this.props.nextAddress}
-                >Next</Button>
+                >
+                    Next
+                </Button>
             </div>
         );
     }

@@ -5,7 +5,6 @@ import App from './components/App';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import registerServiceWorker from './registerServiceWorker';
 
-
 const themeDark = createMuiTheme({
     palette: {
         type: 'dark'
@@ -14,7 +13,7 @@ const themeDark = createMuiTheme({
 
 ReactDOM.render(
     <MuiThemeProvider theme={themeDark}>
-        <App/>
+        <App />
     </MuiThemeProvider>,
 
     document.getElementById('root')

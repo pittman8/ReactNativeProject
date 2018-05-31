@@ -13,11 +13,9 @@ class GetFile extends Component {
         return (
             <div className="GetFile">
                 <p className="App-intro">File: {this.state.file}</p>
-                <Button
-                    variant="raised"
-                    color="primary"
-                    onClick={this.getFile}
-                >Get File</Button>
+                <Button variant="raised" color="primary" onClick={this.getFile}>
+                    Get File
+                </Button>
             </div>
         );
     }
