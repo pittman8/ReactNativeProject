@@ -56,9 +56,7 @@ class Header extends Component {
                         >
                             <MenuIcon/>
                         </IconButton>
-                        <Typography variant="title" color="inherit" className={classes.flex}>
-                            Address Maven
-                        </Typography>
+                        <Typography variant="title" color="inherit" className={classes.flex}>Address Maven</Typography>
                     </Toolbar>
                 </AppBar>
                 <Drawer open={this.state.open} onClose={this.handleToggle}>
