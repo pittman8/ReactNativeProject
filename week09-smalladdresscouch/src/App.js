@@ -21,7 +21,7 @@ class App extends Component {
 
     componentDidMount() {
         this.db = new PouchDB('addresses');
-        this.remoteCouch = 'http://10.11.3.98:5984/addresses';
+        this.remoteCouch = 'http://10.0.0.176:5984/addresses';
         //this.remoteCouch = false;
         this.syncDom = document.getElementById('sync-wrapper');
         this.db.changes({
