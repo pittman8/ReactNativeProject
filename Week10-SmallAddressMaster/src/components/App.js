@@ -40,6 +40,7 @@ class App extends Component {
                             <Address {...props} dataManager={dataManager} />
                         )}
                     />
+<<<<<<< HEAD
                     <Route
                         id="initDb"
                         path="/init-db"
@@ -50,6 +51,18 @@ class App extends Component {
                             />
                         )}
                     />
+=======
+                    {/*<Route*/}
+                        {/*id="initDb"*/}
+                        {/*path="/init-db"*/}
+                        {/*render={props => (*/}
+                            {/*<InitializeDatabase*/}
+                                {/*{...props}*/}
+                                {/*dataManager={dataManager}*/}
+                            {/*/>*/}
+                        {/*)}*/}
+                    {/*/>*/}
+>>>>>>> d77c811ca3538dc255053618f809946129c679ec
                 </div>
             </BrowserRouter>
         );
