@@ -46,50 +46,70 @@ class Address extends Component {
     }
 
     componentDidMount() {
-        this.db = new PouchDB('addresses');
-        this.remoteCouch = 'http://10.11.3.94:5984/addresses';
-        //this.remoteCouch = false;
-        this.syncDom = document.getElementById('sync-wrapper');
-        this.db.changes({
-            since: 'now',
-            live: true
-        }).on('change', this.showAddress);
+        this.props.dataManager.watchChanges(this.watcher);
     }
 
-    addAddress = (data) => {
-        const indexValue = this.state.addressIndex + 1;
-        this.setState({addressIndex: indexValue});
-        const address = {
-            _id: new Date().toISOString(),
-            firstName: data.firstName,
-            lastName: data.lastName,
-            completed: false
-        };
-        this.db.put(address, function callback(err, result) {
-            if (!err) {
-                console.log('Successfully posted a r!');
-            }
-        });
+    componentWillUnmount() {
+        this.canceled = true;
+    }
+
+    watcher = event => {
+        console.log('Watch Change', event);
+        this.showAddress();
     };
 
     showAddress = () => {
         const that = this;
-        let ids = [];
-        const getIds = this.state.ids.length === 0;
-        this.db.allDocs({include_docs: true, descending: true}, function(err, doc) {
-            console.log(doc.rows);
-            if (getIds) {
-                ids = doc.rows.map((row) => {
-                    return row.id;
+        return that.props.dataManager.db
+            .find({
+                selector: { lastName: { $gt: null } },
+                sort: ['lastName']
+            })
+            .then(response => {
+                console.log('RECORD COUNT:', response.docs.length);
+                const names = response.docs.map(address => {
+                    return {
+                        _id: address._id,
+                        _rev: address._rev,
+                        firstName: address.firstName,
+                        lastName: address.lastName
+                    };
                 });
-                that.setState({ids: ids});
-            }
-        });
+                if (!this.canceled) {
+                    that.setState({ names: names });
+                }
+            });
     };
 
-    setAddress = () => {};
-    save = () => {};
-    delete = () => {};
+    setAddress = (offset) => {
+        const value = this.state.namesIndex + offset;
+        if (value >= 0 && value <= this.state.names.length - 1) {
+            this.setState({ namesIndex: value, open: this.state.editOpen });
+        }
+    };
+
+    save = (name) => {
+        console.log(name);
+        this.props.dataManager
+            .save(name)
+            .then(function(response) {
+                console.log(response);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    };
+
+    delete = (name) => {
+        this.props.dataManager
+            .delete(name._id)
+            .then(function(result) {
+                console.log('BAR', result);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    };
 
     render() {
         const {classes} = this.props;
