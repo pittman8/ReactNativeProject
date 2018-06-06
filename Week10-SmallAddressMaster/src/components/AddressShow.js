@@ -33,10 +33,7 @@ class AddressShow extends Component {
 
     constructor(props) {
         super(props);
-<<<<<<< HEAD
-=======
         this.canceled = false;
->>>>>>> d77c811ca3538dc255053618f809946129c679ec
         this.state = {
             editOpen: false,
             edits: {
