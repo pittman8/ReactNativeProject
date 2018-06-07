@@ -50,16 +50,6 @@ class App extends Component {
                             />
                         )}
                     />
-                    <Route
-                        id="initDb"
-                        path="/init-db"
-                        render={props => (
-                            <InitializeDatabase
-                                {...props}
-                                dataManager={dataManager}
-                            />
-                        )}
-                    />
                 </div>
             </BrowserRouter>
         );
