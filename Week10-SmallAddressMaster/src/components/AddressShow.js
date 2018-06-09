@@ -134,4 +134,14 @@ class AddressShow extends Component {
     }
 }
 
+AddressShow.propTypes = {
+    address: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+    }),
+    setEdits: PropTypes.func,
+    addressEdit: PropTypes.func,
+    save: PropTypes.func
+};
+
 export default withStyles(styles)(AddressShow);

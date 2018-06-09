@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -8,8 +8,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddressEditFields from './AddressEditFields';
 import addressList from '../address-list';
-
-const styles = {};
 
 export default class AddressEdit extends React.Component {
     state = {
@@ -65,3 +63,11 @@ export default class AddressEdit extends React.Component {
         );
     }
 }
+
+AddressEdit.propTypes = {
+    addressChangedByUser: PropTypes.func,
+    address: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string
+    })
+};

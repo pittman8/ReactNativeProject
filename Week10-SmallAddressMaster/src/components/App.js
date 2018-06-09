@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Address from './Address';
-import PouchDB from 'pouchdb';
-import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
 import { withStyles } from '@material-ui/core/styles';
 import Header from './Header';
 import Home from './Home';
 import { BrowserRouter, Route } from 'react-router-dom';
 import dataManager from '../tools/PouchDbManager';
 import InitializeDatabase from './InitializeDatabase';
-
 
 const styles = theme => ({
     container: {
@@ -30,7 +24,7 @@ class App extends Component {
         const { classes } = this.props;
         return (
             <BrowserRouter>
-                <div className="App">
+                <div className={classes.container}>
                     <Header />
                     <Route id="home" exact path="/" component={Home} />
                     <Route

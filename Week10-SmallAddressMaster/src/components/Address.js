@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
-import PouchDB from 'pouchdb';
 import AddressShow from './AddressShow';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import PropTypes from 'prop-types';
 
 const styles = theme => ({
     button: {
@@ -112,7 +105,6 @@ class Address extends Component {
     };
 
     render() {
-        const {classes} = this.props;
         return (
             <AddressShow
                 name={this.state.names[this.state.namesIndex]}
