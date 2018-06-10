@@ -32,7 +32,7 @@ export default class Address extends Component {
     }
 
     getAddress = () => {
-        fetch('http://10.0.0.12:30026/address-list')
+        fetch('http://34.218.211.180:30026/address-list')
             .then(response => response.json())
             .then(addressListFromServer => {
                 console.log(addressListFromServer);

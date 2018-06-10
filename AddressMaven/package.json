@@ -19,6 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     //"test": "react-scripts test --env=jsdom --coverage",
+    //"test": "jest --coverage",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
