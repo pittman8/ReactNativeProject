@@ -16,8 +16,9 @@ const styles = {
     root: {
         flexGrow: 1
     },
-    flex: {
-        flex: 1
+    container: {
+        flexGrow: 1,
+        textAlign: 'center'
     }
 };
 
@@ -55,7 +56,7 @@ class Header extends Component {
                         <Typography
                             variant="title"
                             color="inherit"
-                            className={classes.flex}
+                            className={classes.container}
                         >
                             Address Maven
                         </Typography>

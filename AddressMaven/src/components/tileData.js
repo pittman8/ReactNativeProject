@@ -2,28 +2,36 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import HomeIcon from '@material-ui/icons/Home';
+import LocationIcon from '@material-ui/icons/MyLocation';
+import ComputerIcon from '@material-ui/icons/Computer';
 import { Link } from 'react-router-dom';
 
 export const gitItems = (
     <div>
         <ListItem button component={Link} to="/">
             <ListItemIcon>
-                <InboxIcon />
+                <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button component={Link} to="/address">
+            <ListItemIcon>
+                <LocationIcon />
             </ListItemIcon>
             <ListItemText primary="Address" />
         </ListItem>
     </div>
+
 );
 
 export const demoItems = (
     <div>
-        <ListItem button component={Link} to="/get-file">
+        <ListItem button component={Link} to="/init-db">
             <ListItemIcon>
-                <DraftsIcon />
+                <ComputerIcon />
             </ListItemIcon>
-            <ListItemText primary="Get File" />
+            <ListItemText primary="Initialize Database" />
         </ListItem>
     </div>
 );
