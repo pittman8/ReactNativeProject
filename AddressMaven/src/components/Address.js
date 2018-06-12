@@ -45,9 +45,9 @@ class Address extends Component {
         };
     }
 
-    componentDidMount() {
-        this.props.dataManager.watchChanges(this.watcher);
-    }
+    // componentDidMount() {
+    //     this.props.dataManager.watchChanges(this.watcher);
+    // }
 
     componentWillUnmount() {
         this.canceled = true;

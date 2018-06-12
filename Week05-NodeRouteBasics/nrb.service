@@ -8,6 +8,7 @@ SyslogIdentifier=elven-site
 User=ubuntu
 Group=ubuntu
 Environment=NODE_ENV=production
+Environment=NRB_PORT=30027
 
 [Install]
 WantedBy=multi-user.target

@@ -12,7 +12,7 @@ describe('GetFile Test', function() {
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    it('renders and displays the word Nine', () => {
+    it('renders and displays the file', () => {
         const wrapper = shallow(<GetFile />);
         console.log(wrapper);
         const welcome = <p className="App-intro">File: unknown</p>;

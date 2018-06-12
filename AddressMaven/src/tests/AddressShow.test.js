@@ -37,18 +37,27 @@ describe('AddressShow Shallow Suite', function() {
         }
     };
 
+    let wrapper = null;
+
+    const setAddress = () => {
+        const address = addresses[1];
+        wrapper.setProps({ address: address });
+    }
+
     const defaultFieldTest = (name, index, talkToMe) => {
         const wrapper = shallow(<AddressShow address={addresses[0]} />);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
-        expect(wrapper.contains(welcome)).toEqual(true);
+        expect(wrapper.dive().contains(welcome)).toEqual(true);
     };
 
     const afterClickFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[1]} />);
+        const wrapper = shallow(<AddressShow
+            address={addresses[0]}
+            setAddress={setAddress} />);
         const welcome = <p className="App-intro">{name}</p>;
-        getIndex(wrapper, index, talkToMe);
-        expect(wrapper.contains(welcome)).toEqual(true);
+        wrapper.dive().find('#setAddress').simulate('click');
+        expect(wrapper.dive().contains(welcome)).toBe(true);
     };
 
     it('renders and displays the first name', () => {

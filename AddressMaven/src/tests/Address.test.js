@@ -3,42 +3,35 @@ import ReactDOM from 'react-dom';
 import { configure, shallow } from 'enzyme';
 import Address from '../components/Address';
 import Adapter from 'enzyme-adapter-react-16';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import addresses from '../address-list';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import dataManager from '../tools/FakeDataManager';
+import { createMuiTheme } from '@material-ui/core/styles/index';
 configure({ adapter: new Adapter() });
 
 describe('Address tests', function() {
-    beforeEach(() => {
-        global.fetch = jest.fn().mockImplementation(() => {
-            const promise = new Promise(resolve => {
-                resolve({
-                    ok: true,
-                    json: function() {
-                        return [
-                            {
-                                firstName: 'Patty',
-                                lastName: 'Murray',
-                                address: '154 Russell Senate Office Building',
-                                city: 'Washington',
-                                state: 'D.C.',
-                                zip: '20510',
-                                phone: '(202) 224-2621',
-                                website: 'https://www.murray.senate.gov/',
-                                contact:
-                                    'https://www.murray.senate.gov/public/index.cfm/contactme'
-                            }
-                        ];
-                    }
-                });
-            });
-            return promise;
-        });
+    let  wrapper = null;
+
+    const themeDark = createMuiTheme({
+        palette: {
+            type: 'dark'
+        }
     });
+
+    beforeEach(() => {
+        wrapper = shallow(<Address
+            dataManager={dataManager}
+            addressList={addresses} />);
+    });
+
+    const addressProp = wrapper => wrapper
+        .find('WithStyles(AddressShow)')
+        .prop('address');
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
-            <MuiThemeProvider>
+            <MuiThemeProvider theme={themeDark}>
                 <Address />
             </MuiThemeProvider>,
             div
@@ -46,36 +39,32 @@ describe('Address tests', function() {
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    const afterClickFieldTest = (wrapper, finder) => {
-        setImmediate(() => {
-            wrapper.update();
-            wrapper.instance().setAddress(0);
-            setImmediate(() => {
-                wrapper.update();
-                try {
-                    finder();
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-        });
-    };
+    // const afterClickFieldTest = (wrapper, finder) => {
+    //     setImmediate(() => {
+    //         wrapper.update();
+    //         wrapper.instance().setAddress(0);
+    //         setImmediate(() => {
+    //             wrapper.update();
+    //             try {
+    //                 finder();
+    //             } catch (e) {
+    //                 console.log(e);
+    //             }
+    //         });
+    //     });
+    // };
 
     it('renders and displays the default first name', () => {
-        const wrapper = shallow(<Address />);
-        //console.log(wrapper.find('AddressShow').prop('address'));
-        expect(wrapper.find('AddressShow').prop('address').firstName).toEqual(
-            'unknown'
-        );
+        expect(addressProp(wrapper).firstName).toEqual('unknown');
+    });
+
+    it('renders and displays the default first name from FakeData', () => {
+        expect(wrapper.state().address.firstName).toEqual('Patty');
     });
 
     it('renders state of firstName after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses} />);
-        afterClickFieldTest(wrapper, () => {
-            expect(
-                wrapper.find('AddressShow').prop('address').firstName
-            ).toEqual('Patty');
-        });
+        wrapper.instance().setAddress(1);
+        expect(wrapper.state().address.firstName).toEqual('Robert');
     });
 
     it('renders and displays the default last name', () => {

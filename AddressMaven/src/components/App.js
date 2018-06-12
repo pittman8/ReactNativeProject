@@ -3,6 +3,7 @@ import '../css/App.css';
 import Address from './Address';
 import { withStyles } from '@material-ui/core/styles';
 import Header from './Header';
+import GetFile from './GetFile';
 import Home from './Home';
 import { BrowserRouter, Route } from 'react-router-dom';
 import dataManager from '../tools/PouchDbManager';
@@ -27,6 +28,7 @@ class App extends Component {
                 <div className={classes.container}>
                     <Header />
                     <Route id="home" exact path="/" component={Home} />
+                    <Route id="getFile" path="/get-file" component={GetFile} />
                     <Route
                         id="address"
                         path="/address"
