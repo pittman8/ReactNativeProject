@@ -12,17 +12,11 @@ describe('GetFile Test', function() {
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    it('renders and displays the file', () => {
-        const wrapper = shallow(<GetFile />);
-        console.log(wrapper);
-        const welcome = <p className="App-intro">File: unknown</p>;
-        expect(wrapper.contains(welcome)).toEqual(true);
-    });
-
     it('renders state of File paragraph after button click', () => {
         const wrapper = shallow(<App />);
         //console.log(wrapper.debug());
         const headerText = wrapper
+            .dive()
             .find('div')
             .childAt(2)
             .prop('path');

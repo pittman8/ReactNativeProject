@@ -6,7 +6,7 @@ class FakeDataManager {
 
     showAddress = () => {
         const data = {
-            'docs': [
+            'address': [
                 {
                     'firstName': 'Patty',
                     'lastName': 'Murray',

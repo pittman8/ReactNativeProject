@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-
-const styles = {
-    container: {
-        flexGrow: 1,
-        textAlign: 'center'
-    }
-};
+import '../css/App.css'
 
 class GetFile extends Component {
     constructor() {
@@ -18,9 +11,8 @@ class GetFile extends Component {
     }
 
     render() {
-        const {classes} = this.props;
         return (
-            <div className={classes.container}>
+            <div className="App-intro">
                 <p>File: {this.state.file}</p>
                 <Button variant="raised" color="primary" onClick={this.getFile}>
                     Get File
@@ -35,4 +27,4 @@ class GetFile extends Component {
         });
     };
 }
-export default withStyles(styles)(GetFile);
+export default GetFile;

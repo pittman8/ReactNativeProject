@@ -39,16 +39,22 @@ describe('Address tests', function() {
         ReactDOM.unmountComponentAtNode(div);
     });
 
+    it('found WithStyles', () => {
+        wrapper.dive()
+            .find('WithStyles(AddressShow)')
+            .prop('address');
+    });
+
     it('renders and displays the default first name', () => {
         expect(addressProp(wrapper.dive()).firstName).toEqual('unknown');
     });
 
-// it('renders and displays the default first name from FakeData', () => {
-    //     expect(wrapper.state().address.firstName).toEqual('Patty');
-    // });
+    // it('renders and displays the default first name from FakeData', () => {
+    //         expect(wrapper.state().firstName).toEqual('Patty');
+    //     });
 
     // it('renders state of firstName after button click', () => {
-    //     wrapper.setAddress(1);
+    //     wrapper.instance().setAddress(1);
     //     expect(wrapper.state().address.firstName).toEqual('Robert');
     // });
     
