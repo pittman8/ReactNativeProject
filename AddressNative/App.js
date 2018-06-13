@@ -10,13 +10,9 @@ export default class App extends React.Component {
         return (
             <NativeRouter>
                 <View style={styles.addressContainer}>
-                    return (
-                    <View style={styles.addressContainer}>
                         <Header />
                         <Route exact path="/" component={Address} />
                         <Route path="/get-file" component={GetFile} />
-                    </View>
-                    );
                 </View>
             </NativeRouter>
         );

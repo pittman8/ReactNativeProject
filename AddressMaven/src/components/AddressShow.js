@@ -75,7 +75,7 @@ class AddressShow extends Component {
         const {classes} = this.props;
         const editDialog = this.state.editOpen ? (
             <AddressEdit
-                address={this.props.name}
+                address={this.props.address}
                 open={this.state.editOpen}
                 addressEdit={this.addressEdit}
             />
@@ -86,15 +86,15 @@ class AddressShow extends Component {
         return (
             <div className={classes.container}>
                 <Paper className={classes.rootBar}>
-                    <p>First Name: {this.props.name.firstName}</p>
-                    <p>Last Name: {this.props.name.lastName}</p>
-                    <p>Street: {this.props.name.street}</p>
-                    <p>City: {this.props.name.city}</p>
-                    <p>State: {this.props.name.state}</p>
-                    <p>Zip: {this.props.name.zip}</p>
-                    <p>Phone: {this.props.name.phone}</p>
-                    <p>Website: {this.props.name.website}</p>
-                    <p>Contact: {this.props.name.contact}</p>
+                    <p className="App-intro">First Name: {this.props.address.firstName}</p>
+                    <p className="App-intro">Last Name: {this.props.address.lastName}</p>
+                    <p className="App-intro">Street: {this.props.address.street}</p>
+                    <p className="App-intro">City: {this.props.address.city}</p>
+                    <p className="App-intro">State: {this.props.address.state}</p>
+                    <p className="App-intro">Zip: {this.props.address.zip}</p>
+                    <p className="App-intro">Phone: {this.props.address.phone}</p>
+                    <p className="App-intro">Website: {this.props.address.website}</p>
+                    <p className="App-intro">Contact: {this.props.address.contact}</p>
                     <Button
                         color="secondary"
                         variant="raised"

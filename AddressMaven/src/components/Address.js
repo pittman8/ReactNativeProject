@@ -121,7 +121,7 @@ class Address extends Component {
     render() {
         return (
             <AddressShow
-                name={this.state.names[this.state.namesIndex]}
+                address={this.state.names[this.state.namesIndex]}
                 showAddress={this.showAddress}
                 setAddress={this.setAddress}
                 save={this.save}
