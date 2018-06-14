@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import AddressShow from './AddressShow';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
     button: {
@@ -19,29 +20,30 @@ const styles = theme => ({
         marginTop: theme.spacing.unit * 3,
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3
-    }),
+    })
 });
 
 class Address extends Component {
-
     constructor(props) {
         super(props);
         this.canceled = false;
         this.state = {
             editOpen: false,
             namesIndex: 0,
-            names: [{
-                _id: 'unknown',
-                firstName: 'unknown',
-                lastName: 'unknown',
-                street: 'unknown',
-                city: 'unknown',
-                state: 'unknown',
-                zip: 'unknown',
-                phone: 'unknown',
-                website: 'unknown',
-                contact: 'unknown'
-            }]
+            names: [
+                {
+                    _id: 'unknown',
+                    firstName: 'unknown',
+                    lastName: 'unknown',
+                    street: 'unknown',
+                    city: 'unknown',
+                    state: 'unknown',
+                    zip: 'unknown',
+                    phone: 'unknown',
+                    website: 'unknown',
+                    contact: 'unknown'
+                }
+            ]
         };
     }
 
@@ -88,14 +90,14 @@ class Address extends Component {
             });
     };
 
-    setAddress = (offset) => {
+    setAddress = offset => {
         const value = this.state.namesIndex + offset;
         if (value >= 0 && value <= this.state.names.length - 1) {
             this.setState({ namesIndex: value, open: this.state.editOpen });
         }
     };
 
-    save = (name) => {
+    save = name => {
         console.log(name);
         this.props.dataManager
             .save(name)
@@ -107,7 +109,7 @@ class Address extends Component {
             });
     };
 
-    delete = (name) => {
+    delete = name => {
         this.props.dataManager
             .delete(name._id)
             .then(function(result) {
@@ -130,5 +132,11 @@ class Address extends Component {
         );
     }
 }
+
+Address.propTypes = {
+    dataManager: PropTypes.any,
+    save: PropTypes.func,
+    delete: PropTypes.func
+};
 
 export default withStyles(styles)(Address);

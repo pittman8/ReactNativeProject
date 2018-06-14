@@ -8,15 +8,15 @@ import Home from './Home';
 import { BrowserRouter, Route } from 'react-router-dom';
 import dataManager from '../tools/PouchDbManager';
 import InitializeDatabase from './InitializeDatabase';
+import PropTypes from 'prop-types';
 
-const styles = theme => ({
+const styles = {
     container: {
         flexGrow: 1
     }
-});
+};
 
 class App extends Component {
-
     componentDidMount() {
         this.db = dataManager.init();
     }
@@ -51,5 +51,9 @@ class App extends Component {
         );
     }
 }
+
+App.propTypes = {
+    classes: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(App);

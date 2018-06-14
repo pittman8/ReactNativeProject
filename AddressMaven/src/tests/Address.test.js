@@ -19,14 +19,13 @@ describe('Address tests', function() {
     });
 
     beforeEach(() => {
-        wrapper = shallow(<Address
-            dataManager={dataManager}
-            addressList={addresses} />);
+        wrapper = shallow(
+            <Address dataManager={dataManager} addressList={addresses} />
+        );
     });
 
-    const addressProp = wrapper => wrapper
-        .find('WithStyles(AddressShow)')
-        .prop('address');
+    const addressProp = wrapper =>
+        wrapper.find('WithStyles(AddressShow)').prop('address');
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
@@ -40,7 +39,8 @@ describe('Address tests', function() {
     });
 
     it('found WithStyles', () => {
-        wrapper.dive()
+        wrapper
+            .dive()
             .find('WithStyles(AddressShow)')
             .prop('address');
     });
@@ -57,7 +57,7 @@ describe('Address tests', function() {
     //     wrapper.instance().setAddress(1);
     //     expect(wrapper.state().address.firstName).toEqual('Robert');
     // });
-    
+
     it('renders and displays the default last name', () => {
         expect(addressProp(wrapper.dive()).lastName).toEqual('unknown');
     });

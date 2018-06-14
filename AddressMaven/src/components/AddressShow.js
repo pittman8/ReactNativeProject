@@ -23,11 +23,10 @@ const styles = theme => ({
         marginTop: theme.spacing.unit * 3,
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3
-    }),
+    })
 });
 
 class AddressShow extends Component {
-
     constructor(props) {
         super(props);
         this.canceled = false;
@@ -51,14 +50,14 @@ class AddressShow extends Component {
     setEdits = (name, event) => {
         var data = this.props.name;
         data[name] = event.target.value;
-        this.setState({edits: data});
+        this.setState({ edits: data });
     };
 
     addressEdit = address => {
         console.log(address);
 
         if (!address) {
-            return this.setState({editOpen: false});
+            return this.setState({ editOpen: false });
         }
 
         this.setState({
@@ -72,7 +71,7 @@ class AddressShow extends Component {
     };
 
     render() {
-        const {classes} = this.props;
+        const { classes } = this.props;
         const editDialog = this.state.editOpen ? (
             <AddressEdit
                 address={this.props.address}
@@ -80,21 +79,35 @@ class AddressShow extends Component {
                 addressEdit={this.addressEdit}
             />
         ) : (
-            <div/>
+            <div />
         );
 
         return (
             <div className={classes.container}>
                 <Paper className={classes.rootBar}>
-                    <p className="App-intro">First Name: {this.props.address.firstName}</p>
-                    <p className="App-intro">Last Name: {this.props.address.lastName}</p>
-                    <p className="App-intro">Street: {this.props.address.street}</p>
+                    <p className="App-intro">
+                        First Name: {this.props.address.firstName}
+                    </p>
+                    <p className="App-intro">
+                        Last Name: {this.props.address.lastName}
+                    </p>
+                    <p className="App-intro">
+                        Street: {this.props.address.street}
+                    </p>
                     <p className="App-intro">City: {this.props.address.city}</p>
-                    <p className="App-intro">State: {this.props.address.state}</p>
+                    <p className="App-intro">
+                        State: {this.props.address.state}
+                    </p>
                     <p className="App-intro">Zip: {this.props.address.zip}</p>
-                    <p className="App-intro">Phone: {this.props.address.phone}</p>
-                    <p className="App-intro">Website: {this.props.address.website}</p>
-                    <p className="App-intro">Contact: {this.props.address.contact}</p>
+                    <p className="App-intro">
+                        Phone: {this.props.address.phone}
+                    </p>
+                    <p className="App-intro">
+                        Website: {this.props.address.website}
+                    </p>
+                    <p className="App-intro">
+                        Contact: {this.props.address.contact}
+                    </p>
                     <Button
                         color="secondary"
                         variant="raised"
@@ -121,7 +134,7 @@ class AddressShow extends Component {
                         <Button
                             color="secondary"
                             variant="raised"
-                            onClick={() => this.setState({editOpen: true})}
+                            onClick={() => this.setState({ editOpen: true })}
                         >
                             Edit
                         </Button>
@@ -149,7 +162,6 @@ class AddressShow extends Component {
     }
 }
 
-
 AddressShow.propTypes = {
     address: PropTypes.shape({
         firstName: PropTypes.string,
@@ -163,9 +175,13 @@ AddressShow.propTypes = {
         contact: PropTypes.string
     }),
     setAddress: PropTypes.func,
+    showAddress: PropTypes.func,
     setEdits: PropTypes.func,
     addressEdit: PropTypes.func,
-    save: PropTypes.func
+    save: PropTypes.func,
+    delete: PropTypes.func,
+    classes: PropTypes.object.isRequired,
+    name: PropTypes.string
 };
 
 export default withStyles(styles)(AddressShow);

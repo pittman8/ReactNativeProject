@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import '../css/App.css'
+import '../css/App.css';
 
 class GetFile extends Component {
     constructor() {

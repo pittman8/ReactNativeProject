@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { configure, shallow } from 'enzyme';
-import GetFile from '../components/GetFile';
 import App from '../components/App';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });

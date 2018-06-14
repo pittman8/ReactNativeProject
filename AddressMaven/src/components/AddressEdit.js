@@ -50,14 +50,19 @@ export default class AddressEdit extends React.Component {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.userCanceledDialog} color="primary">
+                        <Button
+                            onClick={this.userCanceledDialog}
+                            color="primary"
+                        >
                             Cancel
                         </Button>
-                        <Button onClick={this.userClosedDialogNormal} color="primary">
+                        <Button
+                            onClick={this.userClosedDialogNormal}
+                            color="primary"
+                        >
                             Ok
                         </Button>
                     </DialogActions>
-
                 </Dialog>
             </div>
         );
@@ -66,6 +71,8 @@ export default class AddressEdit extends React.Component {
 
 AddressEdit.propTypes = {
     addressChangedByUser: PropTypes.func,
+    addressEdit: PropTypes.func,
+    open: PropTypes.bool,
     address: PropTypes.shape({
         firstName: PropTypes.string,
         lastName: PropTypes.string,

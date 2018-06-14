@@ -5,7 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
 import LocationIcon from '@material-ui/icons/MyLocation';
 import ComputerIcon from '@material-ui/icons/Computer';
-import FileIcon from '@material-ui/icons/FileDownload'
+import FileIcon from '@material-ui/icons/FileDownload';
 import { Link } from 'react-router-dom';
 
 export const gitItems = (
@@ -29,7 +29,6 @@ export const gitItems = (
             <ListItemText primary="Address" />
         </ListItem>
     </div>
-
 );
 
 export const demoItems = (

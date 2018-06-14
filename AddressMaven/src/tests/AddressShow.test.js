@@ -9,17 +9,17 @@ configure({ adapter: new Adapter() });
 describe('AddressShow Suite', function() {
     const debug = false;
 
-    const addressTest = {
-        firstName: 'Patty',
-        lastName: 'Murray',
-        street: '154 Russell Senate Office Building',
-        city: 'Washington',
-        state: 'D.C.',
-        zip: '20510',
-        phone: '(202) 224-2621',
-        website: 'https://www.murray.senate.gov/',
-        contact: 'https://www.murray.senate.gov/public/index.cfm/contactme'
-    };
+    // const addressTest = {
+    //     firstName: 'Patty',
+    //     lastName: 'Murray',
+    //     street: '154 Russell Senate Office Building',
+    //     city: 'Washington',
+    //     state: 'D.C.',
+    //     zip: '20510',
+    //     phone: '(202) 224-2621',
+    //     website: 'https://www.murray.senate.gov/',
+    //     contact: 'https://www.murray.senate.gov/public/index.cfm/contactme'
+    // };
 
     /*
     * Display debug information about a DOM node of a component by index
@@ -37,30 +37,30 @@ describe('AddressShow Suite', function() {
         }
     };
 
-    let wrapper = null;
+    //let wrapper = null;
 
-    const setAddress = () => {
-        const address = addresses[1];
-        wrapper.setProps({ address: address });
-    }
+    // const setAddress = () => {
+    //     const address = addresses[1];
+    //     wrapper.setProps({ address: address });
+    // };
 
     const defaultFieldTest = (name, index, talkToMe) => {
         const wrapper = shallow(<AddressShow address={addresses[0]} />);
-        const welcome = <p className = "App-intro">{name}</p>;
+        const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.dive().contains(welcome)).toEqual(true);
     };
 
-    const afterClickFieldTest = (name) => {
-        wrapper = shallow(<AddressShow address={addresses[0]} setAddress={setAddress}/>);
-        const patty = <p className="App-intro">{name}</p>;
-        wrapper.dive().find('#setAddress').simulate('click');
-        expect(wrapper.dive().contains(patty)).toBe(true);
-    };
+    // const afterClickFieldTest = (name) => {
+    //     wrapper = shallow(<AddressShow address={addresses[0]} setAddress={setAddress}/>);
+    //     const patty = <p className="App-intro">{name}</p>;
+    //     wrapper.dive().find('#setAddress').simulate('click');
+    //     expect(wrapper.dive().contains(patty)).toBe(true);
+    // };
 
     it('renders and displays the first name', () => {
         defaultFieldTest('First Name: unknown', 0);
-    //    afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
+        //    afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
     });
     //
     it('renders and displays the last name', () => {
@@ -100,6 +100,6 @@ describe('AddressShow Suite', function() {
 
     it('renders and displays the contact', () => {
         defaultFieldTest('Contact: unknown', 0);
-       // afterClickFieldTest('Contact: ' + addressTest.contact, 0);
+        // afterClickFieldTest('Contact: ' + addressTest.contact, 0);
     });
 });
