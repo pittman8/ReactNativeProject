@@ -1,4 +1,4 @@
-# prog272-pittman-2018
+# React Native - Implementing a Mobile Solution
 
 THREE FILES WITH HIGHEST COVERAGE IN ADDRESS MAVEN:
 - Home.js
